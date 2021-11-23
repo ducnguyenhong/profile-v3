@@ -1,28 +1,96 @@
+import clsx from 'clsx';
+import { useState } from 'react';
+import styled, { keyframes } from 'styled-components';
+import { Experience } from './home.experience';
+import { Information } from './home.info';
+
+const animationPinmap = keyframes`
+  from{transform: scale(1);}
+  to{transform: scale(1.15);}
+`;
+
+const HomeStyle = styled.div`
+  .pin-map {
+    animation: ${animationPinmap} 2s ease-in-out infinite alternate;
+  }
+`;
+
 const Home: React.FC = () => {
+  const [showContent, setShowContent] = useState<false | 1 | 2 | 3 | 4 | 5>(false);
+
   return (
-    <div className="flex items-center justify-center h-full relative">
+    <HomeStyle className="flex items-center justify-center h-full relative">
+      {showContent && (
+        <div
+          onClick={() => setShowContent(false)}
+          className="h-screen w-full fixed top-0 left-0 bg-gray-700 opacity-70 z-10"
+        />
+      )}
+
       <img src={`${process.env.PUBLIC_URL}/assets/img-island.png`} alt="island" />
 
-      <div className="absolute" style={{ left: '40%', top: '0' }}>
-        <img src={`${process.env.PUBLIC_URL}/assets/img-volcano.png`} className="w-32 cursor-pointer" alt="volcano" />
+      <div className="absolute" style={{ left: '50%', top: '45%' }}>
+        <button onClick={() => setShowContent(4)} className="outline-none">
+          <img src={`${process.env.PUBLIC_URL}/assets/pin-map-2.png`} className="pin-map w-24" alt="sea shells" />
+        </button>
       </div>
 
-      <div className="absolute" style={{ left: '50%', top: '55%' }}>
-        <img
-          src="https://cdn-icons.flaticon.com/png/512/2969/premium/2969989.png?token=exp=1637517580~hmac=bd70aa2c0865bbd5ef07c6b4e111b39d"
-          className="w-20 cursor-pointer"
-          alt="sea shells"
-        />
+      <div className="absolute" style={{ left: '20%', top: '48%' }}>
+        <button onClick={() => setShowContent(3)} className="outline-none">
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/pin-map-3.png`}
+            className="pin-map w-24 cursor-pointer"
+            alt="umbrella"
+          />
+        </button>
       </div>
 
-      <div className="absolute" style={{ right: '20%', bottom: '40%' }}>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/3112/3112953.png"
-          className="w-20 cursor-pointer"
-          alt="umbrella"
-        />
+      <div className="absolute" style={{ right: '17%', top: '45%' }}>
+        <button onClick={() => setShowContent(5)} className="outline-none">
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/pin-map-4.png`}
+            className="pin-map w-24 cursor-pointer"
+            alt="umbrella"
+          />
+        </button>
       </div>
-    </div>
+
+      <div className="absolute" style={{ left: '38%', top: '3%' }}>
+        <button onClick={() => setShowContent(1)} className="outline-none">
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/pin-map-6.png`}
+            className="pin-map w-24 cursor-pointer"
+            alt="umbrella"
+          />
+        </button>
+      </div>
+
+      <div className="absolute" style={{ right: '24%', top: '5%' }}>
+        <button onClick={() => setShowContent(2)} className="outline-none">
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/pin-map-5.png`}
+            className="pin-map w-24 cursor-pointer"
+            alt="umbrella"
+          />
+        </button>
+      </div>
+
+      <div
+        className={clsx({
+          'fixed z-20 h-screen overflow-hidden top-0 left-0 bg-gradient-to-r opacity-90 duration-500': true,
+          'w-1/3': showContent,
+          'w-0': !showContent,
+          'from-purple-800 to-purple-500': showContent === 1,
+          'from-yellow-700 to-yellow-500': showContent === 2,
+          'from-red-700 to-red-500': showContent === 3,
+          'from-blue-800 to-blue-500': showContent === 4,
+          'from-green-700 to-green-500': showContent === 5,
+        })}
+      >
+        {showContent === 4 && <Information />}
+        {showContent === 1 && <Experience />}
+      </div>
+    </HomeStyle>
   );
 };
 
