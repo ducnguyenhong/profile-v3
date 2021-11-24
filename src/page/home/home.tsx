@@ -1,8 +1,11 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { Contact } from './home.contact';
 import { Experience } from './home.experience';
 import { Information } from './home.info';
+import { Project } from './home.project';
+import { Skill } from './home.skill';
 
 const animationPinmap = keyframes`
   from{transform: scale(1);}
@@ -77,18 +80,21 @@ const Home: React.FC = () => {
 
       <div
         className={clsx({
-          'fixed z-20 h-screen overflow-hidden top-0 left-0 bg-gradient-to-r opacity-90 duration-500': true,
+          'fixed z-20 h-screen overflow-hidden top-0 bg-gradient-to-r opacity-90 duration-500': true,
           'w-1/3': showContent,
           'w-0': !showContent,
-          'from-purple-800 to-purple-500': showContent === 1,
-          'from-yellow-700 to-yellow-500': showContent === 2,
-          'from-red-700 to-red-500': showContent === 3,
-          'from-blue-800 to-blue-500': showContent === 4,
-          'from-green-700 to-green-500': showContent === 5,
+          'from-purple-800 to-purple-500 right-0': showContent === 1,
+          'from-yellow-200 to-yellow-500 left-0': showContent === 2,
+          'from-red-700 to-red-500 right-0': showContent === 3,
+          'from-blue-500 to-blue-800 left-0': showContent === 4,
+          'from-green-500 to-green-700 left-0': showContent === 5,
         })}
       >
-        {showContent === 4 && <Information />}
         {showContent === 1 && <Experience />}
+        {showContent === 2 && <Contact />}
+        {showContent === 3 && <Skill />}
+        {showContent === 4 && <Information />}
+        {showContent === 5 && <Project />}
       </div>
     </HomeStyle>
   );

@@ -2,11 +2,7 @@ export const Information: React.FC = () => {
   return (
     <div>
       <div className="flex justify-center mt-10">
-        <img
-          src="https://profile-v2.herokuapp.com/static/media/profile.23c73f83.jpg"
-          className="w-32 h-32 rounded-full"
-          alt="avatar"
-        />
+        <img src={`${process.env.PUBLIC_URL}/assets/img-avatar.png`} className="w-32 h-32 rounded-full" alt="avatar" />
       </div>
 
       <div className="text-white text-center mt-5 text-xl uppercase font-semibold">Nguyễn Hồng Đức</div>
