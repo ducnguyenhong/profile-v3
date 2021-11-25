@@ -85,7 +85,7 @@ const Home: React.FC = () => {
           'w-0': !showContent,
           'from-purple-800 to-purple-500 right-0': showContent === 1,
           'from-yellow-200 to-yellow-500 left-0': showContent === 2,
-          'from-red-700 to-red-500 right-0': showContent === 3,
+          'from-red-200 to-white right-0': showContent === 3,
           'from-blue-500 to-blue-800 left-0': showContent === 4,
           'from-green-500 to-green-700 left-0': showContent === 5,
         })}
