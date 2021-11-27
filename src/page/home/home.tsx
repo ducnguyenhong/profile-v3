@@ -86,8 +86,7 @@ const Home: React.FC = () => {
           'from-purple-800 to-purple-500 right-0': showContent === 1,
           'from-yellow-200 to-yellow-500 left-0': showContent === 2,
           'from-red-200 to-white right-0': showContent === 3,
-          'left-0': showContent === 4,
-          'from-green-500 to-green-700 left-0': showContent === 5,
+          'left-0': showContent === 4 || showContent === 5,
         })}
       >
         {showContent === 1 && <Experience />}
