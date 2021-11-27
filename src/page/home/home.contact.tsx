@@ -4,6 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
 const ContactStyle = styled.div`
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 56%,
+    rgba(186, 230, 149, 1) 100%
+  );
+
   .contact-facebook {
     background: rgb(76, 100, 247);
     background: linear-gradient(180deg, rgba(76, 100, 247, 1) 0%, rgba(255, 255, 255, 1) 35%);
@@ -32,7 +40,7 @@ const ContactStyle = styled.div`
 
 export const Contact: React.FC = () => {
   return (
-    <ContactStyle className="py-8 px-16">
+    <ContactStyle className="relative h-full">
       <div>
         <div className="contact-phone rounded-2xl w-28 h-28 overflow-hidden flex items-center justify-center flex-col">
           <div className="w-7 h-7 rounded-lg bg-green-400 flex items-center justify-center">
@@ -94,6 +102,11 @@ export const Contact: React.FC = () => {
           </a>
         </div>
       </div>
+      <img
+        src="https://image.freepik.com/free-vector/mountains-landscape-sundown_52683-24164.jpg"
+        className="w-full h-44 absolute bottom-0 left-0"
+        alt="bottom contact"
+      />
     </ContactStyle>
   );
 };
