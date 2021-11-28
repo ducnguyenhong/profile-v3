@@ -1,6 +1,13 @@
+import styled from 'styled-components';
+
+const SkillStyle = styled.div`
+  background-image: url(${process.env.PUBLIC_URL}/assets/skill/img-bg-skill.png);
+`;
+
 export const Skill: React.FC = () => {
   return (
-    <div className="p-10">
+    <SkillStyle className="p-10 bg-no-repeat bg-cover h-full relative">
+      {/* <div className="w-full h-full absolute top-0 left-0 bg-gray-50 opacity-30 z-10"></div> */}
       <div>
         <div className="flex justify-center">
           <label className="uppercase font-semibold">Basic</label>
@@ -104,6 +111,6 @@ export const Skill: React.FC = () => {
           />
         </div>
       </div>
-    </div>
+    </SkillStyle>
   );
 };

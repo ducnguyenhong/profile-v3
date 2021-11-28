@@ -41,7 +41,7 @@ const arrayExp = [
 export const Experience: React.FC = () => {
   return (
     <ExpStyle className="relative h-full bg-no-repeat bg-cover">
-      <div className="absolute w-full h-full bg-gray-700 opacity-30 top-0 left-0 z-10"></div>
+      <div className="absolute w-full h-full bg-gray-700 opacity-10 top-0 left-0 z-10"></div>
       <div className="z-50 absolute top-0 left-0 w-full h-full">
         <div className="flex justify-center mt-5">
           <img

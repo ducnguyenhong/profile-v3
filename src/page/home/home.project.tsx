@@ -84,7 +84,7 @@ export const Project: React.FC = () => {
               <div
                 onClick={() => setShowProject(index + 1)}
                 key={item.title}
-                className="col-span-1 flex flex-col items-center cursor-pointer transform duration-300 hover:scale-125 opacity-90 hover:opacity-100"
+                className="col-span-1 flex flex-col items-center cursor-pointer transform duration-300 hover:scale-125"
               >
                 <img
                   src={`${process.env.PUBLIC_URL}${item.img}`}
