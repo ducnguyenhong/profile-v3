@@ -1,6 +1,3 @@
-import { faFacebook, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
 const ContactStyle = styled.div`
@@ -40,8 +37,18 @@ const ContactStyle = styled.div`
 
 export const Contact: React.FC = () => {
   return (
-    <ContactStyle className="relative h-full">
-      <div>
+    <ContactStyle className="relative h-full flex items-center justify-center">
+      <div className="z-40">
+        <img
+          src={`${process.env.PUBLIC_URL}/assets/contact/img-label-contact.png`}
+          className="w-56"
+          alt="label contact"
+        />
+      </div>
+
+      <div className="h-full w-px bg-gray-500 absolute top-0 left-72 z-10"></div>
+      <div className="w-full h-px bg-gray-500 absolute top-96 left-0 z-10"></div>
+      {/* <div>
         <div className="contact-phone rounded-2xl w-28 h-28 overflow-hidden flex items-center justify-center flex-col">
           <div className="w-7 h-7 rounded-lg bg-green-400 flex items-center justify-center">
             <FontAwesomeIcon icon={faPhone} className="text-white" />
@@ -101,12 +108,12 @@ export const Contact: React.FC = () => {
             Proton Studio
           </a>
         </div>
-      </div>
-      <img
+      </div> */}
+      {/* <img
         src="https://image.freepik.com/free-vector/mountains-landscape-sundown_52683-24164.jpg"
         className="w-full h-44 absolute bottom-0 left-0"
         alt="bottom contact"
-      />
+      /> */}
     </ContactStyle>
   );
 };

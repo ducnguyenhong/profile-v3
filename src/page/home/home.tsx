@@ -19,13 +19,13 @@ const HomeStyle = styled.div`
 `;
 
 const Home: React.FC = () => {
-  const [showContent, setShowContent] = useState<false | 1 | 2 | 3 | 4 | 5>(false);
+  const [showContent, setShowContent] = useState<number>(0);
 
   return (
     <HomeStyle className="flex items-center justify-center h-full relative">
-      {showContent && (
+      {showContent !== 0 && (
         <div
-          onClick={() => setShowContent(false)}
+          onClick={() => setShowContent(0)}
           className="h-screen w-full fixed top-0 left-0 bg-gray-700 opacity-70 z-10"
         />
       )}
@@ -83,9 +83,8 @@ const Home: React.FC = () => {
           'fixed z-20 h-screen overflow-hidden top-0 bg-gradient-to-r opacity-90 duration-500': true,
           'w-1/3': showContent,
           'w-0': !showContent,
-          'from-purple-800 to-purple-500 right-0': showContent === 1,
-          'from-red-200 to-white right-0': showContent === 3,
-          'left-0': showContent === 4 || showContent === 5 || showContent === 2,
+          'left-0': [2, 4, 5].includes(showContent),
+          'right-0': [1, 3].includes(showContent),
         })}
       >
         {showContent === 1 && <Experience />}

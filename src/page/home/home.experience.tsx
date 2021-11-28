@@ -1,78 +1,86 @@
 import clsx from 'clsx';
+import styled from 'styled-components';
 
-interface Exp {
-  time: string;
-  position: string;
-  workplace: string;
-}
+const ExpStyle = styled.div`
+  background-image: url(${process.env.PUBLIC_URL}/assets/experience/img-bg-experience.png);
+`;
 
-const arrayExp: Exp[] = [
+const arrayExp = [
   {
     time: '2004 ',
     workplace: 'Bao Yen primary school',
     position: 'Student',
+    icon: '/assets/experience/img-ic-timeline-1.png',
   },
   {
     time: '2009',
     workplace: 'Thanh Thuy secondary school',
     position: 'Student',
+    icon: '/assets/experience/img-ic-timeline-2.png',
   },
   {
     time: '2013',
     workplace: 'Thanh Thuy high school',
     position: 'Student',
+    icon: '/assets/experience/img-ic-timeline-3.png',
   },
   {
     time: '2017',
     workplace: 'University of Transport and Communications',
     position: 'Student',
+    icon: '/assets/experience/img-ic-timeline-4.png',
   },
   {
     time: '2020',
     workplace: 'Omnischool (EkidEnglish)',
     position: 'Frontend Developer',
+    icon: '/assets/experience/img-ic-timeline-5.png',
   },
 ];
 
 export const Experience: React.FC = () => {
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="px-10">
-        {arrayExp.map((item, index) => {
-          const { workplace, time, position } = item;
-          return (
-            <div key={`exp_${time}`} className="grid grid-cols-4 lg:grid-cols-4">
-              <div
-                className={clsx({
-                  'border-r-4 border-gray-200 col-span-1 relative': true,
-                  'h-24': arrayExp.length !== index + 1,
-                })}
-              >
-                <span className="block font-semibold text-gray-50">{time}</span>
-                <div className="absolute top-0 -right-3 py-1">
-                  <div
-                    className={clsx({
-                      'w-5 h-5 rounded-full flex justify-center items-center': true,
-                      'bg-red-500': index === 0,
-                      'bg-blue-500': index === 1,
-                      'bg-green-500': index === 2,
-                      'bg-yellow-500': index === 3,
-                      'bg-purple-500': index === 4,
-                      'bg-pink-500': index === 5,
-                    })}
-                  >
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+    <ExpStyle className="relative h-full bg-no-repeat bg-cover">
+      <div className="absolute w-full h-full bg-gray-700 opacity-30 top-0 left-0 z-10"></div>
+      <div className="z-50 absolute top-0 left-0 w-full h-full">
+        <div className="flex justify-center mt-5">
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/experience/img-top-experience.png`}
+            className="w-40 mr-36 z-40"
+            alt="top perience"
+          />
+        </div>
+        <div className="px-20 mt-10 relative">
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/experience/img-straw.png`}
+            className="absolute -top-56 left-48 w-52 z-10"
+            alt="straw"
+          />
+
+          {arrayExp.map((item, index) => {
+            const { workplace, time, position, icon } = item;
+            return (
+              <div key={`exp_${time}`} className="grid grid-cols-3">
+                <div
+                  className={clsx({
+                    'col-span-1 relative z-40': true,
+                    'h-28': arrayExp.length !== index + 1,
+                  })}
+                >
+                  <span className="block font-semibold text-white text-xl">{time}</span>
+                  <div className="absolute -top-2 -right-5">
+                    <img src={`${process.env.PUBLIC_URL}${icon}`} alt="ic" className="w-14" />
                   </div>
                 </div>
+                <div className="col-span-4 lg:col-span-2 ml-10">
+                  <span className="font-bold text-xl block text-white">{workplace}</span>
+                  <span className="block text-white">{position}</span>
+                </div>
               </div>
-              <div className="col-span-4 lg:col-span-3 ml-5">
-                <span className="font-medium block text-gray-50">{workplace}</span>
-                <span className="block text-gray-100">{position}</span>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </ExpStyle>
   );
 };
