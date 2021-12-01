@@ -4,6 +4,13 @@ const SkillStyle = styled.div`
   background-image: url(${process.env.PUBLIC_URL}/assets/skill/img-bg-skill.png);
 `;
 
+const ARRAY_FRONTEND = [
+  {
+    name: 'html',
+    url: ''
+  }
+]
+
 export const Skill: React.FC = () => {
   return (
     <SkillStyle className="p-10 bg-no-repeat bg-cover h-full relative">
