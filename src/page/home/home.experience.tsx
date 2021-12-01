@@ -67,14 +67,14 @@ export const Experience: React.FC = () => {
                     'h-28': arrayExp.length !== index + 1,
                   })}
                 >
-                  <span className="block font-semibold text-white text-xl">{time}</span>
+                  <span className="block font-semibold text-gray-600 text-xl">{time}</span>
                   <div className="absolute -top-2 -right-5">
                     <img src={`${process.env.PUBLIC_URL}${icon}`} alt="ic" className="w-14" />
                   </div>
                 </div>
                 <div className="col-span-4 lg:col-span-2 ml-10">
-                  <span className="font-bold text-xl block text-white">{workplace}</span>
-                  <span className="block text-white">{position}</span>
+                  <span className="font-bold text-xl block text-gray-600">{workplace}</span>
+                  <span className="block text-gray-600">{position}</span>
                 </div>
               </div>
             );

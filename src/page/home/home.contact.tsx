@@ -42,10 +42,15 @@ export const Contact: React.FC = () => {
         />
       </div> */}
 
-      <div className="grid grid-cols-2 gap-x-10 gap-y-10 px-10">
-        <div className="col-span-1 flex items-center transform mt-24 -rotate-10">
+      <div className="grid grid-cols-2 gap-x-16 gap-y-10 px-10">
+        <div className="col-span-2 -rotate-10 mt-10">
+          <div className="flex justify-center">
+            <label className="uppercase text-2xl font-bold text-green-500">Contact me</label>
+          </div>
+        </div>
+        <div className="col-span-1 flex items-center transform mt-20 -rotate-10">
           <FontAwesomeIcon icon={faPhone} className="text-lg mr-2 text-yellow-500" />
-          <a href="tel:0389755202" className="block text-center font-semibold text-2xl">
+          <a href="tel:0389755202" className="block text-center font-semibold text-yellow-500 text-2xl">
             0389755202
           </a>
         </div>
@@ -63,16 +68,13 @@ export const Contact: React.FC = () => {
         </div>
 
         <div className="col-span-1 flex items-center transform -rotate-10 mt-12">
-          <FontAwesomeIcon icon={faEnvelope} className="text-xl mr-2" />
-          <a
-            href="mailto:nguyenduc111299@gmail.com"
-            className="block text-center text-purple-500 font-semibold text-2xl"
-          >
-            nguyenduc111299
+          <FontAwesomeIcon icon={faEnvelope} className="text-xl mr-2 text-pink-500" />
+          <a href="mailto:autoclickvn@gmail.com" className="block text-center font-semibold text-pink-500 text-2xl">
+            autoclickvn
           </a>
         </div>
 
-        <div className="col-span-1 flex items-center transform -rotate-10 -mt-10">
+        <div className="col-span-1 flex items-center transform -rotate-10 -mt-8">
           <FontAwesomeIcon icon={faFacebook} className="text-xl mr-2 text-blue-500" />
           <a
             href="https://facebook.com/ducnh99"
