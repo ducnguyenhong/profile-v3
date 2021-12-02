@@ -6,116 +6,177 @@ const SkillStyle = styled.div`
 
 const ARRAY_FRONTEND = [
   {
-    name: 'html',
-    url: ''
-  }
-]
+    name: 'HTML',
+    url: 'https://www.w3schools.com/html',
+    logo: '/assets/logo/img-logo-html.png',
+  },
+  {
+    name: 'CSS',
+    url: 'https://www.w3schools.com/css',
+    logo: '/assets/logo/img-logo-css.png',
+  },
+  {
+    name: 'Javascript',
+    url: 'https://www.w3schools.com/js',
+    logo: '/assets/logo/img-logo-javascript.png',
+  },
+  {
+    name: 'Typescript',
+    url: 'https://www.typescriptlang.org',
+    logo: '/assets/logo/img-logo-typescript.png',
+  },
+  {
+    name: 'ReactJS',
+    url: 'https://reactjs.org',
+    logo: '/assets/logo/img-logo-react.png',
+  },
+  {
+    name: 'React Native',
+    url: 'https://reactnative.dev',
+    logo: '/assets/logo/img-logo-react-native.png',
+  },
+  {
+    name: 'NextJS',
+    url: 'https://nextjs.org',
+    logo: '/assets/logo/img-logo-nextjs.png',
+  },
+];
+
+const ARRAY_BACKEND = [
+  {
+    name: 'NodeJS',
+    url: 'https://nodejs.org',
+    logo: '/assets/logo/img-logo-node.png',
+  },
+  {
+    name: 'ExpressJS',
+    url: 'https://expressjs.com',
+    logo: '/assets/logo/img-logo-express.png',
+  },
+  {
+    name: 'NestJS',
+    url: 'https://nestjs.com',
+    logo: '/assets/logo/img-logo-nestjs.png',
+  },
+  {
+    name: 'MongoDB',
+    url: 'https://www.mongodb.com',
+    logo: '/assets/logo/img-logo-mongodb.png',
+  },
+  {
+    name: 'MySQL',
+    url: 'https://www.mysql.com',
+    logo: '/assets/logo/img-logo-mysql.png',
+  },
+  {
+    name: 'SQL Server',
+    url: 'https://www.microsoft.com/en-us/sql-server',
+    logo: '/assets/logo/img-logo-sqlserver.png',
+  },
+];
+
+const ARRAY_USED = [
+  {
+    name: 'Github',
+    url: 'https://github.com',
+    logo: '/assets/logo/img-logo-github.png',
+  },
+  {
+    name: 'Gitlab',
+    url: 'https://gitlab.com',
+    logo: '/assets/logo/img-logo-gitlab.png',
+  },
+  {
+    name: 'Docker',
+    url: 'https://www.docker.com',
+    logo: '/assets/logo/img-logo-docker.png',
+  },
+  {
+    name: 'Firebase',
+    url: 'https://firebase.google.com',
+    logo: '/assets/logo/img-logo-firebase.png',
+  },
+  {
+    name: 'Photoshop',
+    url: 'https://www.adobe.com/products/photoshop.html',
+    logo: '/assets/logo/img-logo-photoshop.png',
+  },
+  {
+    name: 'Tailwind',
+    url: 'https://tailwindcss.com',
+    logo: '/assets/logo/img-logo-tailwind.png',
+  },
+  {
+    name: 'Bootstrap',
+    url: 'https://getbootstrap.com',
+    logo: '/assets/logo/img-logo-bootstrap.png',
+  },
+  {
+    name: 'Material UI',
+    url: 'https://mui.com',
+    logo: '/assets/logo/img-logo-material.png',
+  },
+  {
+    name: 'Ant design',
+    url: 'https://ant.design',
+    logo: '/assets/logo/img-logo-antdesign.png',
+  },
+];
 
 export const Skill: React.FC = () => {
   return (
     <SkillStyle className="p-10 bg-no-repeat bg-cover h-full relative">
-      {/* <div className="w-full h-full absolute top-0 left-0 bg-gray-50 opacity-30 z-10"></div> */}
-      <div>
-        <div className="flex justify-center">
-          <label className="uppercase font-semibold">Basic</label>
-        </div>
-        <div className="flex justify-center mt-3">
-          <img src={`${process.env.PUBLIC_URL}/assets/img-html.png`} className="w-10" alt="html" />
-          <img src={`${process.env.PUBLIC_URL}/assets/img-css.png`} className="w-10 mx-10" alt="css" />
-          <img src={`${process.env.PUBLIC_URL}/assets/img-javascript.png`} className="w-10" alt="javascript" />
-        </div>
-      </div>
-
-      <div className="mt-8">
+      <div className="mt-20">
         <div className="flex justify-center">
           <label className="uppercase font-semibold">Frontend</label>
         </div>
-        <div className="flex justify-center mt-3">
-          <img src={`${process.env.PUBLIC_URL}/assets/img-react.png`} className="w-14 h-14 rounded-full" alt="react" />
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/img-react-native.png`}
-            className="w-14 h-14 rounded-full mx-10"
-            alt="react-native"
-          />
-          <img src={`${process.env.PUBLIC_URL}/assets/img-next.png`} className="w-14 h-14 rounded-full" alt="next" />
+        <div className="flex justify-center mt-7">
+          {ARRAY_FRONTEND.map((item) => {
+            const { name, url, logo } = item;
+            return (
+              <div key={name} className="mx-2" title={name}>
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  <img src={logo} className="h-10 w-auto duration-300 transform hover:scale-125" alt={name} />
+                </a>
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      <div className="mt-8">
+      <div className="mt-20">
         <div className="flex justify-center">
-          <label className="uppercase font-semibold">Backend</label>
+          <label className="uppercase font-semibold">Backend & Database</label>
         </div>
-        <div className="flex justify-center mt-2">
-          <img src={`${process.env.PUBLIC_URL}/assets/img-node.png`} className="w-14" alt="node" />
+        <div className="flex justify-center mt-7">
+          {ARRAY_BACKEND.map((item) => {
+            const { name, url, logo } = item;
+            return (
+              <div key={name} className="mx-2" title={name}>
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  <img src={logo} className="h-10 w-auto duration-300 transform hover:scale-125" alt={name} />
+                </a>
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      <div className="mt-8">
+      <div className="mt-20">
         <div className="flex justify-center">
-          <label className="uppercase font-semibold">Database</label>
+          <label className="uppercase font-semibold">Used</label>
         </div>
-        <div className="flex justify-center mt-2">
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/img-mongodb.png`}
-            className="w-14 h-14 rounded-md"
-            alt="mongodb"
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/img-mysql.png`}
-            className="w-14 h-14 ml-10 rounded-md"
-            alt="mysql"
-          />
-        </div>
-      </div>
-
-      <div className="mt-8">
-        <div className="flex justify-center">
-          <label className="uppercase font-semibold">And other</label>
-        </div>
-        <div className="flex justify-center mt-2">
-          <img src={`${process.env.PUBLIC_URL}/assets/img-github.png`} className="w-10 h-10 rounded-md" alt="github" />
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/img-gitlab.png`}
-            className="w-10 h-10 rounded-md ml-5"
-            alt="gitlab"
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/img-docker.png`}
-            className="w-10 h-10 rounded-md ml-5"
-            alt="docker"
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/img-firebase.png`}
-            className="w-10 h-10 rounded-md ml-5"
-            alt="firebase"
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/img-photoshop.png`}
-            className="w-10 h-10 rounded-md ml-5"
-            alt="photoshop"
-          />
-        </div>
-        <div className="flex justify-center mt-2">
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/img-tailwind.png`}
-            className="w-10 h-10 rounded-md"
-            alt="tailwind"
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/img-bootstrap.png`}
-            className="w-10 h-10 rounded-md ml-5"
-            alt="bootstrap"
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/img-material.png`}
-            className="w-10 h-10 rounded-md ml-5"
-            alt="material"
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/img-antdesign.png`}
-            className="w-10 h-10 rounded-md ml-5"
-            alt="antdesign"
-          />
+        <div className="flex justify-center mt-7 flex-wrap">
+          {ARRAY_USED.map((item) => {
+            const { name, url, logo } = item;
+            return (
+              <div key={name} className="mx-2" title={name}>
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  <img src={logo} className="h-10 w-auto duration-300 transform hover:scale-125" alt={name} />
+                </a>
+              </div>
+            );
+          })}
         </div>
       </div>
     </SkillStyle>
