@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Contact } from './home.contact';
@@ -78,21 +77,21 @@ const Home: React.FC = () => {
         </button>
       </div>
 
-      <div
+      {/* <div
         className={clsx({
-          'fixed z-20 h-screen overflow-hidden top-0 bg-gradient-to-r opacity-90 duration-500': true,
-          'w-1/3': showContent,
+          'fixed z-20 h-screen lg:overflow-hidden transform top-0 opacity-90 duration-500': true,
+          'w-1/2 lg:w-1/3 translate-x-0': showContent,
           'w-0': !showContent,
-          'left-0': [2, 4, 5].includes(showContent),
-          'right-0': [1, 3].includes(showContent),
+          // 'left-0': [2, 4, 5].includes(showContent),
+          // 'right-0': [1, 3].includes(showContent),
         })}
-      >
-        {showContent === 1 && <Experience />}
-        {showContent === 2 && <Contact />}
-        {showContent === 3 && <Skill />}
-        {showContent === 4 && <Information />}
-        {showContent === 5 && <Project />}
-      </div>
+      > */}
+      {showContent === 1 && <Experience />}
+      {showContent === 2 && <Contact />}
+      <Skill isShow={showContent === 3} />
+      {showContent === 4 && <Information />}
+      {showContent === 5 && <Project />}
+      {/* </div> */}
     </HomeStyle>
   );
 };

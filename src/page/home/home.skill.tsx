@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import styled from 'styled-components';
 
 const SkillStyle = styled.div`
@@ -75,7 +76,7 @@ const ARRAY_BACKEND = [
   },
 ];
 
-const ARRAY_USED = [
+const ARRAY_OTHER = [
   {
     name: 'Github',
     url: 'https://github.com',
@@ -101,6 +102,9 @@ const ARRAY_USED = [
     url: 'https://www.adobe.com/products/photoshop.html',
     logo: '/assets/logo/img-logo-photoshop.png',
   },
+];
+
+const ARRAY_UI = [
   {
     name: 'Tailwind',
     url: 'https://tailwindcss.com',
@@ -123,62 +127,103 @@ const ARRAY_USED = [
   },
 ];
 
-export const Skill: React.FC = () => {
+export const Skill: React.FC<{ isShow?: boolean }> = ({ isShow }) => {
   return (
-    <SkillStyle className="p-10 bg-no-repeat bg-cover h-full relative">
-      <div className="mt-20">
-        <div className="flex justify-center">
-          <label className="uppercase font-semibold">Frontend</label>
-        </div>
-        <div className="flex justify-center mt-7">
-          {ARRAY_FRONTEND.map((item) => {
-            const { name, url, logo } = item;
-            return (
-              <div key={name} className="mx-2" title={name}>
-                <a href={url} target="_blank" rel="noopener noreferrer">
-                  <img src={logo} className="h-10 w-auto duration-300 transform hover:scale-125" alt={name} />
-                </a>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+    <SkillStyle
+      className={clsx({
+        'fixed z-20 h-auto lg:overflow-hidden transform bg-no-repeat bg-cover top-0 right-0 opacity-90 duration-500':
+          true,
+        'w-2/3 lg:w-1/3 translate-x-0': isShow,
+        'w-0': !isShow,
+      })}
+    >
+      {isShow && (
+        <div className="p-10 right-0 h-auto lg:h-full relative top-0">
+          <div className="mt-10">
+            <div className="flex justify-center relative">
+              <div className="w-1/2 m-auto left-0 right-0 h-px bg-gray-300 absolute top-0 bottom-0 z-10" />
+              <label className="uppercase font-semibold z-20 text-gray-500 px-2 rounded bg-yellow-100 text-lg">
+                Frontend
+              </label>
+            </div>
+            <div className="flex justify-center mt-7">
+              {ARRAY_FRONTEND.map((item) => {
+                const { name, url, logo } = item;
+                return (
+                  <div key={name} className="mx-2" title={name}>
+                    <a href={url} target="_blank" rel="noopener noreferrer">
+                      <img src={logo} className="h-12 w-auto duration-300 transform hover:scale-125" alt={name} />
+                    </a>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
 
-      <div className="mt-20">
-        <div className="flex justify-center">
-          <label className="uppercase font-semibold">Backend & Database</label>
-        </div>
-        <div className="flex justify-center mt-7">
-          {ARRAY_BACKEND.map((item) => {
-            const { name, url, logo } = item;
-            return (
-              <div key={name} className="mx-2" title={name}>
-                <a href={url} target="_blank" rel="noopener noreferrer">
-                  <img src={logo} className="h-10 w-auto duration-300 transform hover:scale-125" alt={name} />
-                </a>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+          <div className="mt-20">
+            <div className="flex justify-center relative">
+              <div className="w-1/2 m-auto left-0 right-0 h-px bg-gray-300 absolute top-0 bottom-0 z-10" />
+              <label className="uppercase font-semibold z-20 text-gray-500 px-2 rounded bg-yellow-100 text-lg">
+                UI Framework
+              </label>
+            </div>
+            <div className="flex justify-center mt-7">
+              {ARRAY_UI.map((item) => {
+                const { name, url, logo } = item;
+                return (
+                  <div key={name} className="mx-2" title={name}>
+                    <a href={url} target="_blank" rel="noopener noreferrer">
+                      <img src={logo} className="h-12 w-auto duration-300 transform hover:scale-125" alt={name} />
+                    </a>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
 
-      <div className="mt-20">
-        <div className="flex justify-center">
-          <label className="uppercase font-semibold">Used</label>
+          <div className="mt-20">
+            <div className="flex justify-center relative">
+              <div className="w-1/2 m-auto left-0 right-0 h-px bg-gray-300 absolute top-0 bottom-0 z-10" />
+              <label className="uppercase font-semibold z-20 text-gray-500 px-2 rounded bg-yellow-100 text-lg">
+                Backend
+              </label>
+            </div>
+            <div className="flex justify-center mt-7">
+              {ARRAY_BACKEND.map((item) => {
+                const { name, url, logo } = item;
+                return (
+                  <div key={name} className="mx-2" title={name}>
+                    <a href={url} target="_blank" rel="noopener noreferrer">
+                      <img src={logo} className="h-12 w-auto duration-300 transform hover:scale-125" alt={name} />
+                    </a>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="mt-20">
+            <div className="flex justify-center relative">
+              <div className="w-1/2 m-auto left-0 right-0 h-px bg-gray-300 absolute top-0 bottom-0 z-10" />
+              <label className="uppercase font-semibold z-20 text-gray-500 px-2 rounded bg-yellow-100 text-lg">
+                Other
+              </label>
+            </div>
+            <div className="flex justify-center mt-7 flex-wrap">
+              {ARRAY_OTHER.map((item) => {
+                const { name, url, logo } = item;
+                return (
+                  <div key={name} className="mx-2" title={name}>
+                    <a href={url} target="_blank" rel="noopener noreferrer">
+                      <img src={logo} className="h-12 w-auto duration-300 transform hover:scale-125" alt={name} />
+                    </a>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
-        <div className="flex justify-center mt-7 flex-wrap">
-          {ARRAY_USED.map((item) => {
-            const { name, url, logo } = item;
-            return (
-              <div key={name} className="mx-2" title={name}>
-                <a href={url} target="_blank" rel="noopener noreferrer">
-                  <img src={logo} className="h-10 w-auto duration-300 transform hover:scale-125" alt={name} />
-                </a>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      )}
     </SkillStyle>
   );
 };
