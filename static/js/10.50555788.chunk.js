@@ -1,0 +1,2 @@
+(this.webpackJsonpprofile=this.webpackJsonpprofile||[]).push([[10],{36:function(e,r,n){"use strict";n.r(r);var a,c=n(18),s=n(19),t=n(0),i=s.a.div(a||(a=Object(c.a)(["\n  background-image: url(","/assets/home/background.webp);\n"])),"");r.default=function(e){return Object(t.jsx)(i,{className:"w-full h-screen bg-cover bg-no-repeat relative",children:e.children})}}}]);
+//# sourceMappingURL=10.50555788.chunk.js.map
