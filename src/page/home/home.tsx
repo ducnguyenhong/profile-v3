@@ -1,21 +1,32 @@
+import LoadableUI from 'layout/loadable-ui';
 import { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
-import { Contact } from './home.contact';
-import { Experience } from './home.experience';
-import { Information } from './home.info';
-import { Project } from './home.project';
-import { Skill } from './home.skill';
+import Loadable from 'react-loadable';
+import { HomeStyle } from './home.style';
 
-const animationPinmap = keyframes`
-  from{transform: scale(1);}
-  to{transform: scale(1.15);}
-`;
+const Project = Loadable({
+  loader: () => import('page/project'),
+  loading: LoadableUI,
+});
 
-const HomeStyle = styled.div`
-  .pin-map {
-    animation: ${animationPinmap} 2s ease-in-out infinite alternate;
-  }
-`;
+const Skill = Loadable({
+  loader: () => import('page/skill'),
+  loading: LoadableUI,
+});
+
+const Information = Loadable({
+  loader: () => import('page/info'),
+  loading: LoadableUI,
+});
+
+const Experience = Loadable({
+  loader: () => import('page/exp'),
+  loading: LoadableUI,
+});
+
+const Contact = Loadable({
+  loader: () => import('page/contact'),
+  loading: LoadableUI,
+});
 
 const Home: React.FC = () => {
   const [showContent, setShowContent] = useState<number>(0);

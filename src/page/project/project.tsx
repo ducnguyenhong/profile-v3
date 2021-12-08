@@ -1,75 +1,16 @@
 import clsx from 'clsx';
 import { useState } from 'react';
-import styled from 'styled-components';
+import { ARRAY_PROJECTS } from './project.data';
+import { ProjectStyle } from './project.style';
 
-const ProjectStyle = styled.div`
-  background-color: #f1d4a5;
-`;
-
-const ARRAY_PROJECTS = [
-  {
-    img: '/assets/project/img-project-1.png',
-    title: 'Cvfree',
-    description: 'Free online curriculum vitae',
-    tech: 'react typescript tailwind recoil node express mongodb',
-    github: 'https://github.com/autoclickvn/cvfree',
-    imgDemo: '/assets/project/img-demo-cvfree.png',
-    linkDemo: 'http://cvfree.top',
-  },
-  {
-    img: '/assets/project/img-project-3.png',
-    title: 'Cvfree App',
-    description: 'Free online curriculum vitae on mobile app',
-    tech: 'react react-native typescript redux formik',
-    github: 'https://github.com/autoclickvn/cvfree-mobile-app',
-    imgDemo: '/assets/project/img-demo-cvfree-mobile.png',
-    linkDemo: 'https://youtube.com',
-  },
-  {
-    img: '/assets/project/img-project-3.png',
-    title: 'CMS Base',
-    description: 'A basic CMS framework',
-    tech: 'react tailwind typescript redux formik',
-    github: 'https://github.com/autoclickvn/cms-base',
-    imgDemo: '/assets/project/img-demo-cms-base.png',
-    linkDemo: 'https://base-cms.herokuapp.com',
-  },
-  {
-    img: '/assets/project/img-project-4.png',
-    title: 'Galaxy Utility',
-    description: 'A repository of utility functions',
-    tech: 'typescript npm',
-    github: 'https://github.com/autoclickvn/galaxy-utility',
-    imgDemo: '/assets/project/img-demo-galaxy-utility.png',
-    linkDemo: 'https://www.npmjs.com/package/galaxy-utility',
-  },
-  {
-    img: '/assets/project/img-project-1.png',
-    title: 'Weather',
-    description: 'See Vietnam weather with weather web app',
-    tech: 'react css',
-    github: 'https://github.com/autoclickvn/weather-app',
-    imgDemo: '/assets/project/img-demo-weather.png',
-    linkDemo: 'https://vn-weather.herokuapp.com',
-  },
-  {
-    img: '/assets/project/img-project-3.png',
-    title: 'Cards Game',
-    description: 'Tien Len Mien Bac',
-    tech: 'react bootstrap antdesign ',
-    github: 'https://github.com/autoclickvn/cards-game',
-    imgDemo: '/assets/project/img-demo-cards-game.png',
-    linkDemo: 'https://tienlenmienbac.herokuapp.com',
-  },
-];
-
-export const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
+const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
   const [showProject, setShowProject] = useState<number>(0);
 
   return (
     <ProjectStyle
       className={clsx({
-        'fixed z-20 h-screen lg:overflow-hidden bg-no-repeat bg-cover top-0 left-0 opacity-90 duration-500': true,
+        'fixed z-20 overflow-y-auto h-screen lg:overflow-hidden bg-no-repeat bg-cover top-0 left-0 opacity-90 duration-500':
+          true,
         'w-2/3 lg:w-1/3': isShow,
         'w-0': !isShow,
       })}
@@ -208,3 +149,5 @@ export const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
     </ProjectStyle>
   );
 };
+
+export default Project;

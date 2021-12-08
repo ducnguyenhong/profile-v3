@@ -2,41 +2,13 @@ import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
-import styled from 'styled-components';
+import { ContactStyle } from './contact.style';
 
-const ContactStyle = styled.div`
-  background-image: url(${process.env.PUBLIC_URL}/assets/contact/img-bg-contact.webp);
-
-  .contact-facebook {
-    background: rgb(76, 100, 247);
-    background: linear-gradient(180deg, rgba(76, 100, 247, 1) 0%, rgba(255, 255, 255, 1) 35%);
-  }
-
-  .contact-email {
-    background: rgb(232, 95, 250);
-    background: linear-gradient(180deg, rgba(232, 95, 250, 1) 0%, rgba(255, 255, 255, 1) 35%);
-  }
-
-  .contact-phone {
-    background: rgb(61, 223, 101);
-    background: linear-gradient(180deg, rgba(61, 223, 101, 1) 0%, rgba(255, 255, 255, 1) 35%);
-  }
-
-  .contact-github {
-    background: rgb(126, 126, 126);
-    background: linear-gradient(180deg, rgba(126, 126, 126, 1) 0%, rgba(255, 255, 255, 1) 35%);
-  }
-
-  .-rotate-10 {
-    transform: rotate(-10deg);
-  }
-`;
-
-export const Contact: React.FC<{ isShow: boolean }> = ({ isShow }) => {
+const Contact: React.FC<{ isShow: boolean }> = ({ isShow }) => {
   return (
     <ContactStyle
       className={clsx({
-        'fixed z-20 h-screen lg:overflow-hidden transform bg-no-repeat bg-cover top-0 left-0 opacity-90 duration-500':
+        'fixed z-20 h-screen overflow-y-auto lg:overflow-hidden transform bg-no-repeat bg-cover top-0 left-0 opacity-90 duration-500':
           true,
         'w-2/3 lg:w-1/3 translate-x-0': isShow,
         'w-0': !isShow,
@@ -93,3 +65,5 @@ export const Contact: React.FC<{ isShow: boolean }> = ({ isShow }) => {
     </ContactStyle>
   );
 };
+
+export default Contact;

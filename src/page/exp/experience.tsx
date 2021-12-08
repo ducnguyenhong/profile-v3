@@ -1,48 +1,12 @@
 import clsx from 'clsx';
-import styled from 'styled-components';
+import { ARRAY_EXP } from './experience.data';
+import { ExpStyle } from './experience.style';
 
-const ExpStyle = styled.div`
-  background-image: url(${process.env.PUBLIC_URL}/assets/experience/img-bg-experience.webp);
-`;
-
-const ARRAY_EXP = [
-  {
-    time: '2004 ',
-    workplace: 'Bao Yen primary school',
-    position: 'Student',
-    icon: '/assets/experience/img-ic-timeline-1.png',
-  },
-  {
-    time: '2009',
-    workplace: 'Thanh Thuy secondary school',
-    position: 'Student',
-    icon: '/assets/experience/img-ic-timeline-2.png',
-  },
-  {
-    time: '2013',
-    workplace: 'Thanh Thuy high school',
-    position: 'Student',
-    icon: '/assets/experience/img-ic-timeline-3.png',
-  },
-  {
-    time: '2017',
-    workplace: 'University of Transport and Communications',
-    position: 'Student',
-    icon: '/assets/experience/img-ic-timeline-4.png',
-  },
-  {
-    time: '2020',
-    workplace: 'Omnischool (EkidEnglish)',
-    position: 'Frontend Developer',
-    icon: '/assets/experience/img-ic-timeline-5.png',
-  },
-];
-
-export const Experience: React.FC<{ isShow: boolean }> = ({ isShow }) => {
+const Experience: React.FC<{ isShow: boolean }> = ({ isShow }) => {
   return (
     <ExpStyle
       className={clsx({
-        'fixed z-20 h-screen lg:overflow-hidden transform bg-no-repeat bg-cover top-0 right-0 opacity-90 duration-500':
+        'fixed z-20 overflow-y-auto h-screen lg:overflow-hidden transform bg-no-repeat bg-cover top-0 right-0 opacity-90 duration-500':
           true,
         'w-2/3 lg:w-1/3 translate-x-0': isShow,
         'w-0': !isShow,
@@ -95,3 +59,5 @@ export const Experience: React.FC<{ isShow: boolean }> = ({ isShow }) => {
     </ExpStyle>
   );
 };
+
+export default Experience;

@@ -1,23 +1,13 @@
 import { faBirthdayCake, faEnvelope, faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
-import styled from 'styled-components';
+import { InfoStyle } from './info.style';
 
-const InfoStyle = styled.div`
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 56%,
-    rgba(233, 208, 210, 1) 100%
-  );
-`;
-
-export const Information: React.FC<{ isShow: boolean }> = ({ isShow }) => {
+const Information: React.FC<{ isShow: boolean }> = ({ isShow }) => {
   return (
     <InfoStyle
       className={clsx({
-        'fixed z-20 h-screen lg:overflow-hidden transform bg-no-repeat bg-cover top-0 left-0 opacity-90 duration-500':
+        'fixed z-20 overflow-y-auto h-screen lg:overflow-hidden transform bg-no-repeat bg-cover top-0 left-0 opacity-90 duration-500':
           true,
         'w-2/3 lg:w-1/3 translate-x-0': isShow,
         'w-0': !isShow,
@@ -114,3 +104,5 @@ export const Information: React.FC<{ isShow: boolean }> = ({ isShow }) => {
     </InfoStyle>
   );
 };
+
+export default Information;
