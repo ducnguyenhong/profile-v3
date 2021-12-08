@@ -1,10 +1,11 @@
 import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import clsx from 'clsx';
 import styled from 'styled-components';
 
 const ContactStyle = styled.div`
-  background-image: url(${process.env.PUBLIC_URL}/assets/contact/img-bg-contact.png);
+  background-image: url(${process.env.PUBLIC_URL}/assets/contact/img-bg-contact.webp);
 
   .contact-facebook {
     background: rgb(76, 100, 247);
@@ -31,130 +32,64 @@ const ContactStyle = styled.div`
   }
 `;
 
-export const Contact: React.FC = () => {
+export const Contact: React.FC<{ isShow: boolean }> = ({ isShow }) => {
   return (
-    <ContactStyle className="relative h-full bg-no-repeat bg-cover flex items-center justify-center">
-      {/* <div className="z-40">
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/contact/img-label-contact.png`}
-          className="w-56"
-          alt="label contact"
-        />
-      </div> */}
+    <ContactStyle
+      className={clsx({
+        'fixed z-20 h-screen lg:overflow-hidden transform bg-no-repeat bg-cover top-0 left-0 opacity-90 duration-500':
+          true,
+        'w-2/3 lg:w-1/3 translate-x-0': isShow,
+        'w-0': !isShow,
+      })}
+    >
+      {isShow && (
+        <div className="relative h-full bg-no-repeat bg-cover flex items-center justify-center">
+          <div className="grid grid-cols-2 gap-x-16 gap-y-10 px-10">
+            <div className="col-span-2 -rotate-10 mt-10">
+              <div className="flex justify-center">
+                <label className="uppercase text-2xl font-bold text-green-500">Contact me</label>
+              </div>
+            </div>
+            <div className="col-span-1 flex items-center transform mt-20 -rotate-10">
+              <FontAwesomeIcon icon={faPhone} className="text-lg mr-2 text-yellow-500" />
+              <a href="tel:0389755202" className="block text-center font-semibold text-yellow-500 text-2xl">
+                0389755202
+              </a>
+            </div>
 
-      <div className="grid grid-cols-2 gap-x-16 gap-y-10 px-10">
-        <div className="col-span-2 -rotate-10 mt-10">
-          <div className="flex justify-center">
-            <label className="uppercase text-2xl font-bold text-green-500">Contact me</label>
+            <div className="col-span-1 flex items-center transform -rotate-10">
+              <FontAwesomeIcon icon={faGithub} className="text-xl mr-2" />
+              <a
+                href="https://github.com/autoclickvn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center font-semibold text-2xl text-gray-600"
+              >
+                autoclickvn
+              </a>
+            </div>
+
+            <div className="col-span-1 flex items-center transform -rotate-10 mt-12">
+              <FontAwesomeIcon icon={faEnvelope} className="text-xl mr-2 text-pink-500" />
+              <a href="mailto:autoclickvn@gmail.com" className="block text-center font-semibold text-pink-500 text-2xl">
+                autoclickvn
+              </a>
+            </div>
+
+            <div className="col-span-1 flex items-center transform -rotate-10 -mt-8">
+              <FontAwesomeIcon icon={faFacebook} className="text-xl mr-2 text-blue-500" />
+              <a
+                href="https://facebook.com/ducnh99"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center font-semibold text-2xl text-blue-500"
+              >
+                Nguyễn Đức
+              </a>
+            </div>
           </div>
         </div>
-        <div className="col-span-1 flex items-center transform mt-20 -rotate-10">
-          <FontAwesomeIcon icon={faPhone} className="text-lg mr-2 text-yellow-500" />
-          <a href="tel:0389755202" className="block text-center font-semibold text-yellow-500 text-2xl">
-            0389755202
-          </a>
-        </div>
-
-        <div className="col-span-1 flex items-center transform -rotate-10">
-          <FontAwesomeIcon icon={faGithub} className="text-xl mr-2" />
-          <a
-            href="https://github.com/autoclickvn"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-center font-semibold text-2xl text-gray-600"
-          >
-            autoclickvn
-          </a>
-        </div>
-
-        <div className="col-span-1 flex items-center transform -rotate-10 mt-12">
-          <FontAwesomeIcon icon={faEnvelope} className="text-xl mr-2 text-pink-500" />
-          <a href="mailto:autoclickvn@gmail.com" className="block text-center font-semibold text-pink-500 text-2xl">
-            autoclickvn
-          </a>
-        </div>
-
-        <div className="col-span-1 flex items-center transform -rotate-10 -mt-8">
-          <FontAwesomeIcon icon={faFacebook} className="text-xl mr-2 text-blue-500" />
-          <a
-            href="https://facebook.com/ducnh99"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-center font-semibold text-2xl text-blue-500"
-          >
-            Nguyễn Đức
-          </a>
-        </div>
-      </div>
-
-      {/* <div className="h-full w-px bg-gray-500 absolute top-0 left-72 z-10"></div>
-      <div className="w-full h-px bg-gray-500 absolute top-96 left-0 z-10"></div> */}
-      {/* <div>
-        <div className="contact-phone rounded-2xl w-28 h-28 overflow-hidden flex items-center justify-center flex-col">
-          <div className="w-7 h-7 rounded-lg bg-green-400 flex items-center justify-center">
-            <FontAwesomeIcon icon={faPhone} className="text-white" />
-          </div>
-          <a href="tel:0389755202" className="block text-center text-green-500 text-sm font-medium mt-3">
-            0389755202
-          </a>
-        </div>
-
-        <div className="contact-email rounded-2xl w-28 h-28 mt-5 ml-16 overflow-hidden flex items-center justify-center flex-col">
-          <div className="w-7 h-7 rounded-lg bg-purple-400 flex items-center justify-center">
-            <FontAwesomeIcon icon={faEnvelope} className="text-white" />
-          </div>
-          <a href="mailto:autoclickvn@gmail.com" className="block text-center text-purple-500 font-medium mt-3 text-sm">
-            autoclickvn
-          </a>
-        </div>
-
-        <div className="contact-facebook rounded-2xl w-28 h-28 mt-5 ml-32 overflow-hidden flex items-center justify-center flex-col">
-          <div className="w-7 h-7 rounded-lg bg-blue-500 flex items-center justify-center">
-            <FontAwesomeIcon icon={faFacebook} className="text-white" />
-          </div>
-          <a
-            href="https://facebook.com/ducnh99"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-center font-medium mt-3 text-sm text-blue-600"
-          >
-            Nguyễn Đức
-          </a>
-        </div>
-
-        <div className="contact-github rounded-2xl w-28 h-28 mt-5 ml-48 overflow-hidden flex items-center justify-center flex-col">
-          <div className="w-7 h-7 rounded-lg bg-gray-500 flex items-center justify-center">
-            <FontAwesomeIcon icon={faGithub} className="text-white" />
-          </div>
-          <a
-            href="https://github.com/autoclickvn"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-center font-medium mt-3 text-sm text-gray-600"
-          >
-            Nguyễn Đức
-          </a>
-        </div>
-
-        <div className="contact-youtube rounded-2xl w-28 h-28 mt-5 ml-64 64overflow-hidden flex items-center justify-center flex-col">
-          <div className="w-7 h-7 rounded-lg bg-red-500 flex items-center justify-center">
-            <FontAwesomeIcon icon={faYoutube} className="text-white" />
-          </div>
-          <a
-            href="https://www.youtube.com/channel/UCLO94_1jrZLbzLJdsxsjrGA"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-center font-medium mt-3 text-sm text-red-600"
-          >
-            Proton Studio
-          </a>
-        </div>
-      </div> */}
-      {/* <img
-        src="https://image.freepik.com/free-vector/mountains-landscape-sundown_52683-24164.jpg"
-        className="w-full h-44 absolute bottom-0 left-0"
-        alt="bottom contact"
-      /> */}
+      )}
     </ContactStyle>
   );
 };

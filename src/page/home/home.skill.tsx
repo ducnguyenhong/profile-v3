@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import styled from 'styled-components';
 
 const SkillStyle = styled.div`
-  background-image: url(${process.env.PUBLIC_URL}/assets/skill/img-bg-skill.png);
+  background-image: url(${process.env.PUBLIC_URL}/assets/skill/img-bg-skill.webp);
 `;
 
 const ARRAY_FRONTEND = [
@@ -127,11 +127,11 @@ const ARRAY_UI = [
   },
 ];
 
-export const Skill: React.FC<{ isShow?: boolean }> = ({ isShow }) => {
+export const Skill: React.FC<{ isShow: boolean }> = ({ isShow }) => {
   return (
     <SkillStyle
       className={clsx({
-        'fixed z-20 h-auto lg:overflow-hidden transform bg-no-repeat bg-cover top-0 right-0 opacity-90 duration-500':
+        'fixed z-20 h-screen lg:overflow-hidden transform bg-no-repeat bg-cover top-0 right-0 opacity-90 duration-500':
           true,
         'w-2/3 lg:w-1/3 translate-x-0': isShow,
         'w-0': !isShow,
@@ -142,7 +142,7 @@ export const Skill: React.FC<{ isShow?: boolean }> = ({ isShow }) => {
           <div className="mt-10">
             <div className="flex justify-center relative">
               <div className="w-1/2 m-auto left-0 right-0 h-px bg-gray-300 absolute top-0 bottom-0 z-10" />
-              <label className="uppercase font-semibold z-20 text-gray-500 px-2 rounded bg-yellow-100 text-lg">
+              <label className="uppercase font-semibold z-20 text-gray-500 px-2.5 rounded-2xl bg-yellow-100 text-lg">
                 Frontend
               </label>
             </div>
@@ -163,7 +163,7 @@ export const Skill: React.FC<{ isShow?: boolean }> = ({ isShow }) => {
           <div className="mt-20">
             <div className="flex justify-center relative">
               <div className="w-1/2 m-auto left-0 right-0 h-px bg-gray-300 absolute top-0 bottom-0 z-10" />
-              <label className="uppercase font-semibold z-20 text-gray-500 px-2 rounded bg-yellow-100 text-lg">
+              <label className="uppercase font-semibold z-20 text-gray-500 px-2.5 rounded-xl bg-yellow-100 text-lg">
                 UI Framework
               </label>
             </div>
@@ -184,7 +184,7 @@ export const Skill: React.FC<{ isShow?: boolean }> = ({ isShow }) => {
           <div className="mt-20">
             <div className="flex justify-center relative">
               <div className="w-1/2 m-auto left-0 right-0 h-px bg-gray-300 absolute top-0 bottom-0 z-10" />
-              <label className="uppercase font-semibold z-20 text-gray-500 px-2 rounded bg-yellow-100 text-lg">
+              <label className="uppercase font-semibold z-20 text-gray-500 px-2.5 rounded-xl bg-yellow-100 text-lg">
                 Backend
               </label>
             </div>
@@ -205,7 +205,7 @@ export const Skill: React.FC<{ isShow?: boolean }> = ({ isShow }) => {
           <div className="mt-20">
             <div className="flex justify-center relative">
               <div className="w-1/2 m-auto left-0 right-0 h-px bg-gray-300 absolute top-0 bottom-0 z-10" />
-              <label className="uppercase font-semibold z-20 text-gray-500 px-2 rounded bg-yellow-100 text-lg">
+              <label className="uppercase font-semibold z-20 text-gray-500 px-2.5 rounded-xl bg-yellow-100 text-lg">
                 Other
               </label>
             </div>

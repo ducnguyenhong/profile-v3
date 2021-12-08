@@ -29,19 +29,23 @@ const Home: React.FC = () => {
         />
       )}
 
-      <img src={`${process.env.PUBLIC_URL}/assets/img-island.png`} alt="island" />
+      <img src={`${process.env.PUBLIC_URL}/assets/home/img-island.webp`} alt="island" />
 
       <div className="absolute" style={{ left: '50%', top: '45%' }}>
         <button onClick={() => setShowContent(4)} className="outline-none">
-          <img src={`${process.env.PUBLIC_URL}/assets/pin-map-2.png`} className="pin-map w-24" alt="sea shells" />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/home/pin-map-info.webp`}
+            className="pin-map w-16 lg:w-24"
+            alt="sea shells"
+          />
         </button>
       </div>
 
       <div className="absolute" style={{ left: '20%', top: '48%' }}>
         <button onClick={() => setShowContent(3)} className="outline-none">
           <img
-            src={`${process.env.PUBLIC_URL}/assets/pin-map-3.png`}
-            className="pin-map w-24 cursor-pointer"
+            src={`${process.env.PUBLIC_URL}/assets/home/pin-map-skill.webp`}
+            className="pin-map w-16 lg:w-24 cursor-pointer"
             alt="umbrella"
           />
         </button>
@@ -50,8 +54,8 @@ const Home: React.FC = () => {
       <div className="absolute" style={{ right: '17%', top: '45%' }}>
         <button onClick={() => setShowContent(5)} className="outline-none">
           <img
-            src={`${process.env.PUBLIC_URL}/assets/pin-map-4.png`}
-            className="pin-map w-24 cursor-pointer"
+            src={`${process.env.PUBLIC_URL}/assets/home/pin-map-project.webp`}
+            className="pin-map w-16 lg:w-24 cursor-pointer"
             alt="umbrella"
           />
         </button>
@@ -60,8 +64,8 @@ const Home: React.FC = () => {
       <div className="absolute" style={{ left: '38%', top: '3%' }}>
         <button onClick={() => setShowContent(1)} className="outline-none">
           <img
-            src={`${process.env.PUBLIC_URL}/assets/pin-map-6.png`}
-            className="pin-map w-24 cursor-pointer"
+            src={`${process.env.PUBLIC_URL}/assets/home/pin-map-exp.webp`}
+            className="pin-map w-16 lg:w-24 cursor-pointer"
             alt="umbrella"
           />
         </button>
@@ -70,28 +74,18 @@ const Home: React.FC = () => {
       <div className="absolute" style={{ right: '24%', top: '5%' }}>
         <button onClick={() => setShowContent(2)} className="outline-none">
           <img
-            src={`${process.env.PUBLIC_URL}/assets/pin-map-5.png`}
-            className="pin-map w-24 cursor-pointer"
+            src={`${process.env.PUBLIC_URL}/assets/home/pin-map-contact.webp`}
+            className="pin-map w-16 lg:w-24 cursor-pointer"
             alt="umbrella"
           />
         </button>
       </div>
 
-      {/* <div
-        className={clsx({
-          'fixed z-20 h-screen lg:overflow-hidden transform top-0 opacity-90 duration-500': true,
-          'w-1/2 lg:w-1/3 translate-x-0': showContent,
-          'w-0': !showContent,
-          // 'left-0': [2, 4, 5].includes(showContent),
-          // 'right-0': [1, 3].includes(showContent),
-        })}
-      > */}
-      {showContent === 1 && <Experience />}
-      {showContent === 2 && <Contact />}
+      <Experience isShow={showContent === 1} />
+      <Contact isShow={showContent === 2} />
       <Skill isShow={showContent === 3} />
-      {showContent === 4 && <Information />}
-      {showContent === 5 && <Project />}
-      {/* </div> */}
+      <Information isShow={showContent === 4} />
+      <Project isShow={showContent === 5} />
     </HomeStyle>
   );
 };

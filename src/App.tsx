@@ -5,10 +5,12 @@ import RotateScreen from 'page/rotate-screen';
 import { useDimension } from 'util/useDimension';
 
 function App() {
-  const { width } = useDimension();
-  if (width < 576) {
+  const { width, height } = useDimension();
+
+  if (width < height && width < 576) {
     return <RotateScreen />;
   }
+
   return (
     <div>
       <DefaultLayout>

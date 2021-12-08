@@ -19,7 +19,7 @@ const Starfish: React.FC = () => {
       <StarfishStyle className="fixed bottom-10 right-10">
         <button className="outline-none" onClick={() => setShowMore(true)}>
           <img
-            src={`${process.env.PUBLIC_URL}/assets/img-starfish.png`}
+            src={`${process.env.PUBLIC_URL}/assets/more/img-starfish.png`}
             className="w-16 cursor-pointer"
             alt="starfish"
           />
