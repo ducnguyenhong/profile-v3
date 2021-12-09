@@ -63,11 +63,11 @@ const Music = () => {
   const { playing, onToggle } = useAudio(`${process.env.PUBLIC_URL}/assets/audio/Lam-Gi-Phai-Hot.mp3`);
 
   return (
-    <MusicStyle className="fixed bottom-10 left-10">
+    <MusicStyle className="fixed bottom-7 left-7 lg:bottom-10 lg:left-10">
       <button onClick={onToggle} className="outline-none" title="Music">
         <img
           src={`${process.env.PUBLIC_URL}/assets/home/music-${playing ? 'play' : 'pause'}.png`}
-          className="w-12 music-icon"
+          className="w-8 lg:w-12 music-icon"
           alt="music"
         />
       </button>

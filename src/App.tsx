@@ -27,10 +27,15 @@ const Music = Loadable({
   loading: LoadableUI,
 });
 
+const TetHoliday = Loadable({
+  loader: () => import('component/tet-holiday'),
+  loading: LoadableUI,
+});
+
 function App() {
   const { width, height } = useDimension();
 
-  if (width < height && width < 576) {
+  if (width < height) {
     return <RotateScreen />;
   }
 
@@ -40,6 +45,7 @@ function App() {
         <Home />
         <Starfish />
         <Music />
+        <TetHoliday />
       </DefaultLayout>
     </div>
   );

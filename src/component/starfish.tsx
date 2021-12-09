@@ -16,11 +16,11 @@ const Starfish: React.FC = () => {
   const [showMore, setShowMore] = useState<boolean>(false);
   return (
     <Fragment>
-      <StarfishStyle className="fixed bottom-10 right-10">
+      <StarfishStyle className="fixed bottom-7 right-7 lg:bottom-10 lg:right-10">
         <button className="outline-none" onClick={() => setShowMore(true)}>
           <img
             src={`${process.env.PUBLIC_URL}/assets/more/img-starfish.png`}
-            className="w-16 cursor-pointer"
+            className="w-10 lg:w-16 cursor-pointer"
             alt="starfish"
           />
         </button>
