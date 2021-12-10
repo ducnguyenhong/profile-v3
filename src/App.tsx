@@ -17,8 +17,8 @@ const Starfish = Loadable({
   loading: LoadableUI,
 });
 
-const Home = Loadable({
-  loader: () => import('page/home'),
+const MainRouter = Loadable({
+  loader: () => import('route/router'),
   loading: LoadableUI,
 });
 
@@ -42,7 +42,7 @@ function App() {
   return (
     <div>
       <DefaultLayout>
-        <Home />
+        <MainRouter />
         <Starfish />
         <Music />
         <TetHoliday />
