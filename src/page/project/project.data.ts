@@ -5,7 +5,7 @@ export const ARRAY_PROJECTS = [
     description: 'Free online curriculum vitae',
     tech: 'react typescript tailwind recoil node express mongodb',
     github: 'https://github.com/autoclickvn/cvfree',
-    imgDemo: '/assets/project/img-demo-cvfree.png',
+    imgDemo: '/assets/project/img-demo-cvfree.webp',
     linkDemo: 'http://cvfree.top',
   },
   {
@@ -14,7 +14,7 @@ export const ARRAY_PROJECTS = [
     description: 'Free online curriculum vitae on mobile app',
     tech: 'react react-native typescript redux formik',
     github: 'https://github.com/autoclickvn/cvfree-mobile-app',
-    imgDemo: '/assets/project/img-demo-cvfree-mobile.png',
+    imgDemo: '/assets/project/img-demo-cvfree-mobile.webp',
     linkDemo: 'https://youtu.be/Tmjgf6rKoCc',
   },
   {
@@ -23,7 +23,7 @@ export const ARRAY_PROJECTS = [
     description: 'A basic CMS framework',
     tech: 'react tailwind typescript redux formik',
     github: 'https://github.com/autoclickvn/cms-base',
-    imgDemo: '/assets/project/img-demo-cms-base.png',
+    imgDemo: '/assets/project/img-demo-cms-base.webp',
     linkDemo: 'https://base-cms.herokuapp.com',
   },
   {
@@ -32,7 +32,7 @@ export const ARRAY_PROJECTS = [
     description: 'A repository of utility functions',
     tech: 'typescript npm',
     github: 'https://github.com/autoclickvn/galaxy-utility',
-    imgDemo: '/assets/project/img-demo-galaxy-utility.png',
+    imgDemo: '/assets/project/img-demo-galaxy-utility.webp',
     linkDemo: 'https://www.npmjs.com/package/galaxy-utility',
   },
   {
@@ -41,7 +41,7 @@ export const ARRAY_PROJECTS = [
     description: 'See Vietnam weather with weather web app',
     tech: 'react css',
     github: 'https://github.com/autoclickvn/weather-app',
-    imgDemo: '/assets/project/img-demo-weather.png',
+    imgDemo: '/assets/project/img-demo-weather.webp',
     linkDemo: 'https://vn-weather.herokuapp.com',
   },
   {
@@ -50,7 +50,7 @@ export const ARRAY_PROJECTS = [
     description: 'Tien Len Mien Bac',
     tech: 'react bootstrap antdesign ',
     github: 'https://github.com/autoclickvn/cards-game',
-    imgDemo: '/assets/project/img-demo-cards-game.png',
+    imgDemo: '/assets/project/img-demo-cards-game.webp',
     linkDemo: 'https://tienlenmienbac.herokuapp.com',
   },
 ];

@@ -15,7 +15,7 @@ const Contact: React.FC<{ isShow: boolean }> = ({ isShow }) => {
       const currentContact = ARRAY_CONTACT.indexOf(activeContact);
       const nextContact = currentContact === ARRAY_CONTACT.length - 1 ? 0 : currentContact + 1;
       setActiveContact(ARRAY_CONTACT[nextContact]);
-    }, 1500);
+    }, 2000);
 
     return () => clearInterval(intervalContact);
   }, [activeContact]);
