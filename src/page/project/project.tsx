@@ -87,7 +87,7 @@ const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                 <button className="absolute -top-4 -right-4 outline-none" onClick={() => setShowProject(0)}>
                   <img src={`${process.env.PUBLIC_URL}/assets/img-close-modal.png`} className="w-12" alt="close" />
                 </button>
-                <div className="bg-white py-10 px-20" style={{ width: 700 }}>
+                <div className="bg-white py-10 px-20 rounded-md" style={{ width: 700 }}>
                   <div className="flex justify-center items-center flex-col">
                     <label className="uppercase font-bold text-2xl">{ARRAY_PROJECTS[showProject - 1].title}</label>
                     <span className="block mt-2 italic font-medium text-gray-400">
