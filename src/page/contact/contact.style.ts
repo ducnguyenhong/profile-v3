@@ -1,29 +1,26 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const animationNumber = keyframes`
+  from{transform: translateY(0)}
+  to{transform: translateY(-10px)}
+`;
 
 export const ContactStyle = styled.div`
   background-image: url(${process.env.PUBLIC_URL}/assets/contact/img-bg-contact.webp);
 
-  .contact-facebook {
-    background: rgb(76, 100, 247);
-    background: linear-gradient(180deg, rgba(76, 100, 247, 1) 0%, rgba(255, 255, 255, 1) 35%);
+  .bubble {
+    animation: ${animationNumber} 1.2s ease-in-out 3s infinite alternate;
   }
-
-  .contact-email {
-    background: rgb(232, 95, 250);
-    background: linear-gradient(180deg, rgba(232, 95, 250, 1) 0%, rgba(255, 255, 255, 1) 35%);
+  .bubble-github {
+    animation-delay: 0.4s;
   }
-
-  .contact-phone {
-    background: rgb(61, 223, 101);
-    background: linear-gradient(180deg, rgba(61, 223, 101, 1) 0%, rgba(255, 255, 255, 1) 35%);
+  .bubble-facebook {
+    animation-delay: 1s;
   }
-
-  .contact-github {
-    background: rgb(126, 126, 126);
-    background: linear-gradient(180deg, rgba(126, 126, 126, 1) 0%, rgba(255, 255, 255, 1) 35%);
+  .bubble-email {
+    animation-delay: 1.2s;
   }
-
-  .-rotate-10 {
-    transform: rotate(-10deg);
+  .bubble-phone {
+    animation-delay: 0.8s;
   }
 `;

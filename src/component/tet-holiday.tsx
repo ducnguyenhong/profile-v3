@@ -78,13 +78,13 @@ const TetHoliday: React.FC = () => {
 
         {(days > 0 || hours > 0 || minutes > 0 || seconds > 0) && (
           <div className="mt-2 grid grid-cols-4 gap-x-3">
-            <div className="col-span-1 number-icon number-icon-1 font-bold text-red-400 lg:mx-1 text-xs lg:text-base w-4 lg:w-8">
+            <div className="col-span-1 number-icon number-icon-1 font-bold text-blue-300 lg:mx-1 text-xs lg:text-base w-4 lg:w-8">
               {days}d
             </div>
             <div className="col-span-1 number-icon number-icon-2 font-bold text-yellow-200 lg:mx-1 text-xs lg:text-base w-4 lg:w-8">
               {hours}h
             </div>
-            <div className="col-span-1 number-icon number-icon-3 font-bold text-red-400 lg:mx-1 text-xs lg:text-base w-4 lg:w-8">
+            <div className="col-span-1 number-icon number-icon-3 font-bold text-blue-300 lg:mx-1 text-xs lg:text-base w-4 lg:w-8">
               {minutes}m
             </div>
             <div className="col-span-1 number-icon number-icon-4 font-bold text-yellow-200 lg:mx-1 text-xs lg:text-base w-4 lg:w-8">
