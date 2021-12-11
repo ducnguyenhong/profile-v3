@@ -7,9 +7,9 @@ const Information: React.FC<{ isShow: boolean }> = ({ isShow }) => {
   return (
     <InfoStyle
       className={clsx({
-        'fixed z-20 overflow-y-auto h-screen lg:overflow-hidden transform bg-no-repeat bg-cover top-0 left-0 opacity-90 duration-500':
+        'fixed z-20 overflow-y-auto h-screen lg:overflow-hidden bg-no-repeat bg-cover top-0 left-0 opacity-90 duration-500':
           true,
-        'w-2/3 lg:w-1/3 translate-x-0': isShow,
+        'w-2/3 lg:w-1/3': isShow,
         'w-0': !isShow,
       })}
     >
@@ -90,14 +90,6 @@ const Information: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                 Thanh Thuỷ - Phú Thọ
               </a>
             </div>
-          </div>
-
-          <div className="absolute bottom-0 left-0 w-full">
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/info/img-bottom-info.png`}
-              alt="bottom info"
-              className="h-36 w-full opacity-50"
-            />
           </div>
         </div>
       )}

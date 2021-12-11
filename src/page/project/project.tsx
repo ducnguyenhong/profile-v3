@@ -17,20 +17,7 @@ const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
     >
       {isShow && (
         <div className="h-full">
-          <div className="relative">
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/project/img-top-project.png`}
-              alt="top project"
-              className="w-full h-52"
-            />
-            {/* <img
-              src={`${process.env.PUBLIC_URL}/assets/img-label-project.png`}
-              alt="top project"
-              className="absolute top-20 left-5 h-40"
-            /> */}
-          </div>
-
-          <div className="pb-5 px-20 mt-5">
+          <div className="pb-5 px-20 mt-60">
             <div className="grid grid-cols-2 gap-x-20 gap-y-7">
               {ARRAY_PROJECTS.map((item, index) => {
                 return (
@@ -62,24 +49,6 @@ const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
               })}
             </div>
           </div>
-
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/project/img-bottom-project-2.png`}
-            className="w-16 absolute bottom-3 left-3 opacity-50"
-            alt="umbrella"
-          />
-
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/project/img-bottom-project-3.png`}
-            className="absolute w-16 bottom-5 right-3 opacity-30"
-            alt="umbrella"
-          />
-
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/project/img-bottom-project-4.png`}
-            className="w-14 h-14 absolute top-44 right-3 opacity-50"
-            alt="umbrella"
-          />
 
           {showProject !== 0 && (
             <div className="fixed top-20 right-20 z-40 px-20 py-10">

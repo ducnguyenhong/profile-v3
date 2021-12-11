@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export const ProjectStyle = styled.div`
-  background-color: #f1d4a5;
+  background-image: url(${process.env.PUBLIC_URL}/assets/project/img-bg-project.webp);
 `;
