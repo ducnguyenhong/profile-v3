@@ -14,6 +14,34 @@ const StarfishStyle = styled.div`
   }
 `;
 
+const ARRAY_TECH_USED = [
+  {
+    img: `${process.env.PUBLIC_URL}/assets/logo/img-logo-react.png`,
+    url: 'https://reactjs.org',
+    title: 'ReactJS',
+  },
+  {
+    img: `${process.env.PUBLIC_URL}/assets/logo/img-logo-typescript.png`,
+    url: 'https://typescriptlang.org',
+    title: 'Typescript',
+  },
+  {
+    img: `${process.env.PUBLIC_URL}/assets/logo/img-logo-tailwind.png`,
+    url: 'https://tailwindcss.com',
+    title: 'Tailwind CSS',
+  },
+  {
+    img: `${process.env.PUBLIC_URL}/assets/logo/img-logo-flaticon.png`,
+    url: 'https://flaticon.com',
+    title: 'Flaticon',
+  },
+  {
+    img: `${process.env.PUBLIC_URL}/assets/logo/img-logo-freepik.png`,
+    url: 'https://freepik.com',
+    title: 'Freepik',
+  },
+];
+
 const Starfish: React.FC = () => {
   const [showMore, setShowMore] = useState<boolean>(false);
   const { t } = useTranslation();
@@ -43,22 +71,24 @@ const Starfish: React.FC = () => {
               <img src={`${process.env.PUBLIC_URL}/assets/img-close-modal.png`} className="w-12" alt="close" />
             </button>
             <div className="h-80 lg:h-auto overflow-y-auto bg-white py-10 px-10 lg:px-20 w-full rounded-md">
-              <div className="w-full">
-                <div className="flex justify-center">
+              <div className="w-full grid-cols-2 grid gap-x-10 gap-y-14">
+                <div className="flex justify-center col-span-2">
                   <label className="uppercase text-yellow-500 font-bold text-lg">
                     Always have new content updated here
                   </label>
                 </div>
 
-                <div className="mt-16">
-                  <label className="block mr-10 font-semibold text-lg">• {t('STARFISH.LANGUAGE')}</label>
-                  <div className="flex justify-center items-center">
+                <div className="col-span-1">
+                  <label className="inline-block font-semibold text-gray-600 border-b">
+                    • {t('STARFISH.LANGUAGE')}
+                  </label>
+                  <div className="flex justify-center items-center mt-5">
                     <button className="outline-none" onClick={() => onChangeLang('en')}>
                       <img
                         src={`${process.env.PUBLIC_URL}/assets/common/img-flag-en.png`}
                         className={clsx({
-                          'w-16 hover:opacity-100 duration-300 transform hover:scale-110': true,
-                          'opacity-50': language === 'vi',
+                          'w-12 hover:opacity-100 duration-300 transform hover:scale-110': true,
+                          'opacity-30': language === 'vi',
                         })}
                         alt="en"
                         title="English"
@@ -69,8 +99,8 @@ const Starfish: React.FC = () => {
                       <img
                         src={`${process.env.PUBLIC_URL}/assets/common/img-flag-vn.png`}
                         className={clsx({
-                          'w-16 ml-16 hover:opacity-100 duration-300 transform hover:scale-110': true,
-                          'opacity-50': language === 'en',
+                          'w-12 ml-10 hover:opacity-100 duration-300 transform hover:scale-110': true,
+                          'opacity-30': language === 'en',
                         })}
                         alt="vn"
                         title="Tiếng Việt"
@@ -79,32 +109,42 @@ const Starfish: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-10 flex items-center">
-                  <label className="block mr-10 font-semibold text-lg">• About my project (technology used)</label>
-                  <div className="flex items-center">
-                    <img
-                      src={`${process.env.PUBLIC_URL}/assets/logo/img-logo-react.png`}
-                      alt="reactjs"
-                      title="reactjs"
-                      className="h-10"
-                    />
-                    <img
-                      src={`${process.env.PUBLIC_URL}/assets/logo/img-logo-typescript.png`}
-                      alt="typescript"
-                      title="typescript"
-                      className="h-10 mx-5"
-                    />
-                    <img
-                      src={`${process.env.PUBLIC_URL}/assets/logo/img-logo-tailwind.png`}
-                      alt="tailwindcss"
-                      title="tailwindcss"
-                      className="h-10"
-                    />
+                <div className="col-span-1">
+                  <label className="inline-block font-semibold text-gray-600 border-b">• My website (Tech used)</label>
+                  <div className="flex items-center mt-5 justify-center">
+                    {ARRAY_TECH_USED.map((item) => {
+                      return (
+                        <a href={item.url} target="_blank" rel="noopener noreferrer" key={item.title}>
+                          <img src={item.img} alt={item.title} title={item.title} className="h-10 mr-3" />
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
 
-                <div className="mt-10">
-                  <label className="block mr-5 font-semibold text-lg">• Other links</label>
+                <div className="col-span-1">
+                  <label className="inline-block font-semibold text-gray-600 border-b">• My CV</label>
+                  <div className="mt-5 flex justify-center">
+                    <a
+                      href="http://cvfree.top/cv-public/nguyen-hong-duc.61767226ca0d8dfd8c726aba"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mr-10 font-medium text-gray-500 duration-100 hover:text-blue-500 hover:underline"
+                    >
+                      CV online
+                    </a>
+                    <a
+                      href={`${process.env.PUBLIC_URL}/assets/pdf/nguyen-hong-duc.pdf`}
+                      download
+                      className="mr-10 font-medium text-gray-500 duration-100 hover:text-blue-500 hover:underline"
+                    >
+                      CV PDF
+                    </a>
+                  </div>
+                </div>
+
+                <div className="col-span-1">
+                  <label className="inline-block font-semibold text-gray-600 border-b">• Other links</label>
                   <div className="mt-5 flex justify-center">
                     <a
                       href="https://autoclickvn.github.io/profile-v1"
@@ -123,14 +163,6 @@ const Starfish: React.FC = () => {
                       Profile v2
                     </a>
                     <a
-                      href="https://facebook.com/ducnh99"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mr-10 font-medium text-gray-500 duration-100 hover:text-blue-500 hover:underline"
-                    >
-                      Facebook
-                    </a>
-                    <a
                       href="https://www.youtube.com/channel/UCLO94_1jrZLbzLJdsxsjrGA"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -141,11 +173,11 @@ const Starfish: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-10 w-1/2 mx-auto">
+                <div className="col-span-2">
                   <hr />
                 </div>
 
-                <div className="flex justify-center mt-10">
+                <div className="flex justify-center col-span-2">
                   <span className="font-semibold text-gray-600">
                     Copyright © 2021 -
                     <a href="/" className="text-green-500 ml-1 uppercase">
