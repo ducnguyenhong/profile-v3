@@ -42,7 +42,7 @@ const Home: React.FC = () => {
 
       <img src={`${process.env.PUBLIC_URL}/assets/home/img-island.webp`} alt="island" />
 
-      <div className="absolute" style={{ left: '50%', top: '45%' }}>
+      <div className="absolute pin-map-info">
         <button onClick={() => setShowContent(4)} className="outline-none">
           <img
             src={`${process.env.PUBLIC_URL}/assets/home/pin-map-info.webp`}
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         </button>
       </div>
 
-      <div className="absolute" style={{ left: '20%', top: '48%' }}>
+      <div className="absolute pin-map-skill">
         <button onClick={() => setShowContent(3)} className="outline-none">
           <img
             src={`${process.env.PUBLIC_URL}/assets/home/pin-map-skill.webp`}
@@ -62,7 +62,7 @@ const Home: React.FC = () => {
         </button>
       </div>
 
-      <div className="absolute" style={{ right: '17%', top: '45%' }}>
+      <div className="absolute pin-map-project">
         <button onClick={() => setShowContent(5)} className="outline-none">
           <img
             src={`${process.env.PUBLIC_URL}/assets/home/pin-map-project.webp`}
@@ -72,7 +72,7 @@ const Home: React.FC = () => {
         </button>
       </div>
 
-      <div className="absolute" style={{ left: '38%', top: '3%' }}>
+      <div className="absolute pin-map-exp">
         <button onClick={() => setShowContent(1)} className="outline-none">
           <img
             src={`${process.env.PUBLIC_URL}/assets/home/pin-map-exp.webp`}
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
         </button>
       </div>
 
-      <div className="absolute" style={{ right: '24%', top: '5%' }}>
+      <div className="absolute pin-map-contact">
         <button onClick={() => setShowContent(2)} className="outline-none">
           <img
             src={`${process.env.PUBLIC_URL}/assets/home/pin-map-contact.webp`}

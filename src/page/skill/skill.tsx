@@ -6,9 +6,9 @@ const Skill: React.FC<{ isShow: boolean }> = ({ isShow }) => {
   return (
     <SkillStyle
       className={clsx({
-        'fixed z-20 overflow-y-auto h-screen lg:overflow-hidden transform bg-no-repeat bg-cover top-0 right-0 opacity-90 duration-500':
+        'fixed z-20 overflow-y-auto h-screen lg:overflow-hidden bg-no-repeat bg-cover top-0 right-0 opacity-90 duration-500':
           true,
-        'w-2/3 lg:w-1/3 translate-x-0': isShow,
+        'w-2/3 lg:w-1/2 xl:w-1/3': isShow,
         'w-0': !isShow,
       })}
     >

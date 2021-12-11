@@ -25,7 +25,7 @@ const Contact: React.FC<{ isShow: boolean }> = ({ isShow }) => {
       className={clsx({
         'fixed z-20 h-screen overflow-y-auto lg:overflow-hidden bg-no-repeat bg-cover top-0 left-0 opacity-90 duration-500':
           true,
-        'w-2/3 lg:w-1/3': isShow,
+        'w-2/3 lg:w-1/2 xl:w-1/3': isShow,
         'w-0': !isShow,
       })}
     >
