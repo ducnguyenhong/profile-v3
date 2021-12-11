@@ -16,7 +16,7 @@ const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
       })}
     >
       {isShow && (
-        <div className="h-full">
+        <div className="content h-auto pb-10 lg:pb-0 overflow-y-auto bg-no-repeat bg-cover">
           <div className="pb-5 px-20 mt-60">
             <div className="grid grid-cols-2 gap-x-20 gap-y-7">
               {ARRAY_PROJECTS.map((item, index) => {
@@ -51,12 +51,12 @@ const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
           </div>
 
           {showProject !== 0 && (
-            <div className="fixed top-20 right-20 z-40 px-20 py-10">
-              <div className="bg-gradient-to-r from-yellow-300 to-green-400 p-4 rounded-xl flex items-center justify-center relative">
+            <div className="fixed top-0 lg:top-20 left-0 bottom-0 lg:bottom-auto right-0 m-auto lg:left-auto lg:right-20 z-50 px-20 py-10">
+              <div className="bg-gradient-to-r from-yellow-300 to-green-400 p-4 h-full rounded-xl flex items-center justify-center relative">
                 <button className="absolute -top-4 -right-4 outline-none" onClick={() => setShowProject(0)}>
                   <img src={`${process.env.PUBLIC_URL}/assets/img-close-modal.png`} className="w-12" alt="close" />
                 </button>
-                <div className="bg-white py-10 px-20 rounded-md" style={{ width: 700 }}>
+                <div className="bg-white py-10 px-20 rounded-md h-full overflow-y-auto" style={{ width: 700 }}>
                   <div className="flex justify-center items-center flex-col">
                     <label className="uppercase font-bold text-2xl">{ARRAY_PROJECTS[showProject - 1].title}</label>
                     <span className="block mt-2 italic font-medium text-gray-400">

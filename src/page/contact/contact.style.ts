@@ -6,7 +6,17 @@ const animationNumber = keyframes`
 `;
 
 export const ContactStyle = styled.div`
-  background-image: url(${process.env.PUBLIC_URL}/assets/contact/img-bg-contact.webp);
+  @media (min-width: 1024px) {
+    & {
+      background-image: url(${process.env.PUBLIC_URL}/assets/contact/img-bg-contact.webp);
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .content {
+      background-image: url(${process.env.PUBLIC_URL}/assets/contact/img-bg-contact.webp);
+    }
+  }
 
   .bubble {
     animation: ${animationNumber} 1.2s ease-in-out 3s infinite alternate;

@@ -6,16 +6,15 @@ const Experience: React.FC<{ isShow: boolean }> = ({ isShow }) => {
   return (
     <ExpStyle
       className={clsx({
-        'fixed z-20 overflow-y-auto h-screen lg:overflow-hidden transform bg-no-repeat bg-cover top-0 right-0 opacity-90 duration-500':
+        'fixed z-20 overflow-y-auto h-screen lg:overflow-hidden bg-no-repeat bg-cover top-0 right-0 opacity-90 duration-500':
           true,
-        'w-2/3 lg:w-1/3 translate-x-0': isShow,
+        'w-2/3 lg:w-1/3': isShow,
         'w-0': !isShow,
       })}
     >
       {isShow && (
-        <div className="relative h-full bg-no-repeat bg-cover">
-          <div className="absolute w-full h-full bg-gray-700 opacity-10 top-0 left-0 z-10"></div>
-          <div className="z-50 absolute top-40 left-0 w-full h-full">
+        <div className="content pb-10 lg:pb-0 h-auto bg-no-repeat bg-cover">
+          <div className="z-50 pt-40 left-0 w-full h-full">
             <div className="px-10 mt-10 relative">
               {ARRAY_EXP.map((item, index) => {
                 const { workplace, time, position, icon } = item;

@@ -14,7 +14,7 @@ const Information: React.FC<{ isShow: boolean }> = ({ isShow }) => {
       })}
     >
       {isShow && (
-        <div className="relative h-full main-content">
+        <div className="content pb-10 lg:pb-0 relative h-auto bg-cover bg-no-repeat main-content">
           <div className="relative">
             <img
               src={`${process.env.PUBLIC_URL}/assets/info/img-cover-info.webp`}

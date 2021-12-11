@@ -13,7 +13,7 @@ const Skill: React.FC<{ isShow: boolean }> = ({ isShow }) => {
       })}
     >
       {isShow && (
-        <div className="p-10 right-0 h-auto lg:h-full relative top-0">
+        <div className="content bg-no-repeat bg-cover px-10 pt-10 pb-20 lg:pb-10 right-0 h-auto lg:h-full relative top-0">
           <div className="mt-10">
             <div className="flex justify-center relative">
               <div className="w-1/2 m-auto left-0 right-0 h-px bg-gray-300 absolute top-0 bottom-0 z-10" />
