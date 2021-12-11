@@ -73,9 +73,7 @@ const Starfish: React.FC = () => {
             <div className="h-80 lg:h-auto overflow-y-auto bg-white py-10 px-10 lg:px-20 w-full rounded-md">
               <div className="w-full grid-cols-2 grid gap-x-10 gap-y-14">
                 <div className="flex justify-center col-span-2">
-                  <label className="uppercase text-yellow-500 font-bold text-lg">
-                    Always have new content updated here
-                  </label>
+                  <label className="uppercase text-yellow-500 font-bold text-lg">{t('STARFISH.TITLE')}</label>
                 </div>
 
                 <div className="col-span-1">
@@ -110,12 +108,19 @@ const Starfish: React.FC = () => {
                 </div>
 
                 <div className="col-span-1">
-                  <label className="inline-block font-semibold text-gray-600 border-b">• My website (Tech used)</label>
+                  <label className="inline-block font-semibold text-gray-600 border-b">
+                    • {t('STARFISH.TECH_USED')}
+                  </label>
                   <div className="flex items-center mt-5 justify-center">
                     {ARRAY_TECH_USED.map((item) => {
                       return (
                         <a href={item.url} target="_blank" rel="noopener noreferrer" key={item.title}>
-                          <img src={item.img} alt={item.title} title={item.title} className="h-10 mr-3" />
+                          <img
+                            src={item.img}
+                            alt={item.title}
+                            title={item.title}
+                            className="h-10 mr-3 transform hover:scale-110 duration-300"
+                          />
                         </a>
                       );
                     })}
@@ -123,7 +128,7 @@ const Starfish: React.FC = () => {
                 </div>
 
                 <div className="col-span-1">
-                  <label className="inline-block font-semibold text-gray-600 border-b">• My CV</label>
+                  <label className="inline-block font-semibold text-gray-600 border-b">• {t('STARFISH.MY_CV')}</label>
                   <div className="mt-5 flex justify-center">
                     <a
                       href="http://cvfree.top/cv-public/nguyen-hong-duc.61767226ca0d8dfd8c726aba"
@@ -144,7 +149,9 @@ const Starfish: React.FC = () => {
                 </div>
 
                 <div className="col-span-1">
-                  <label className="inline-block font-semibold text-gray-600 border-b">• Other links</label>
+                  <label className="inline-block font-semibold text-gray-600 border-b">
+                    • {t('STARFISH.OTHER_LINK')}
+                  </label>
                   <div className="mt-5 flex justify-center">
                     <a
                       href="https://autoclickvn.github.io/profile-v1"
@@ -179,7 +186,7 @@ const Starfish: React.FC = () => {
 
                 <div className="flex justify-center col-span-2">
                   <span className="font-semibold text-gray-600">
-                    Copyright © 2021 -
+                    {t('STARFISH.COPYRIGHT')} © 2021 -
                     <a href="/" className="text-green-500 ml-1 uppercase">
                       nhduc.net
                     </a>

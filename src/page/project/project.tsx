@@ -1,10 +1,12 @@
 import clsx from 'clsx';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ARRAY_PROJECTS } from './project.data';
 import { ProjectStyle } from './project.style';
 
 const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
   const [showProject, setShowProject] = useState<number>(0);
+  const { t } = useTranslation();
 
   return (
     <ProjectStyle
@@ -60,7 +62,7 @@ const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                   <div className="flex justify-center items-center flex-col">
                     <label className="uppercase font-bold text-2xl">{ARRAY_PROJECTS[showProject - 1].title}</label>
                     <span className="block mt-2 italic font-medium text-gray-400">
-                      {ARRAY_PROJECTS[showProject - 1].description}
+                      {t(ARRAY_PROJECTS[showProject - 1].description)}
                     </span>
                   </div>
                   <div className="flex justify-center mt-7">
@@ -72,7 +74,7 @@ const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                   </div>
                   <div className="flex items-center justify-start mt-5">
                     <div className="flex items-center">
-                      <span className="block font-semibold mr-3 whitespace-nowrap">Tech used:</span>
+                      <span className="block font-semibold mr-3 whitespace-nowrap">{t('PROJECT.TECH_USED')}:</span>
                       {ARRAY_PROJECTS[showProject - 1].tech.split(' ').map((item) => {
                         return (
                           <div>

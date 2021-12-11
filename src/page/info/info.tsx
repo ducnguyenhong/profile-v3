@@ -1,9 +1,12 @@
 import { faBirthdayCake, faEnvelope, faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
+import { useTranslation } from 'react-i18next';
 import { InfoStyle } from './info.style';
 
 const Information: React.FC<{ isShow: boolean }> = ({ isShow }) => {
+  const { t } = useTranslation();
+
   return (
     <InfoStyle
       className={clsx({
@@ -38,7 +41,8 @@ const Information: React.FC<{ isShow: boolean }> = ({ isShow }) => {
           <div className="text-center mt-12 font-semibold flex justify-center">
             <div className="bg-gray-50 px-4 py-2 rounded-md">
               <span className="text-gray-600 text-lg font-medium whitespace-nowrap">
-                "Hello, my name is <span className="text-red-500 font-bold text-lg">Duc</span>. Welcome to my website"
+                "{t('INFO.HELLO_START')}{' '}
+                <span className="text-red-500 font-bold text-lg">{t('INFO.HELLO_MIDDLE')}</span>. {t('INFO.HELLO_END')}"
               </span>
             </div>
           </div>
@@ -87,7 +91,7 @@ const Information: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                 target="_blank"
                 className="mt-2 font-medium text-purple-400 duration-300 hover:text-purple-500 whitespace-nowrap"
               >
-                Thanh Thuỷ - Phú Thọ
+                {t('INFO.ADDRESS')}
               </a>
             </div>
           </div>

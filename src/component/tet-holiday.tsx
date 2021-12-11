@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styled, { keyframes } from 'styled-components';
 
 const animationNumber = keyframes`
@@ -30,6 +31,7 @@ const TetHoliday: React.FC = () => {
   const [minutes, setMinutes] = useState<number>(0);
   const [seconds, setSeconds] = useState<number>(0);
   const countDownDate = new Date('Feb 1, 2022 00:00:00').getTime();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const countDown = setInterval(function () {
@@ -79,16 +81,20 @@ const TetHoliday: React.FC = () => {
         {(days > 0 || hours > 0 || minutes > 0 || seconds > 0) && (
           <div className="mt-2 grid grid-cols-4 gap-x-3">
             <div className="col-span-1 number-icon number-icon-1 font-bold text-blue-300 lg:mx-1 text-xs lg:text-base w-4 lg:w-8">
-              {days}d
+              {days}
+              {t('TET.DAY')}
             </div>
             <div className="col-span-1 number-icon number-icon-2 font-bold text-yellow-200 lg:mx-1 text-xs lg:text-base w-4 lg:w-8">
-              {hours}h
+              {hours}
+              {t('TET.HOUR')}
             </div>
             <div className="col-span-1 number-icon number-icon-3 font-bold text-blue-300 lg:mx-1 text-xs lg:text-base w-4 lg:w-8">
-              {minutes}m
+              {minutes}
+              {t('TET.MINUTE')}
             </div>
             <div className="col-span-1 number-icon number-icon-4 font-bold text-yellow-200 lg:mx-1 text-xs lg:text-base w-4 lg:w-8">
-              {seconds}s
+              {seconds}
+              {t('TET.SECOND')}
             </div>
           </div>
         )}

@@ -1,8 +1,11 @@
 import clsx from 'clsx';
+import { useTranslation } from 'react-i18next';
 import { ARRAY_EXP } from './experience.data';
 import { ExpStyle } from './experience.style';
 
 const Experience: React.FC<{ isShow: boolean }> = ({ isShow }) => {
+  const { t } = useTranslation();
+
   return (
     <ExpStyle
       className={clsx({
@@ -17,7 +20,7 @@ const Experience: React.FC<{ isShow: boolean }> = ({ isShow }) => {
           <div className="z-50 pt-40 left-0 w-full h-full">
             <div className="px-10 mt-10 relative">
               {ARRAY_EXP.map((item, index) => {
-                const { workplace, time, position, icon } = item;
+                const { workplace, time, position, icon, url } = item;
                 return (
                   <div key={`exp_${time}`} className="grid grid-cols-5">
                     <div
@@ -32,7 +35,14 @@ const Experience: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                       </div>
                     </div>
                     <div className="col-span-3 lg:col-span-3 ml-16">
-                      <span className="font-bold text-lg block text-gray-600">{workplace}</span>
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-bold text-lg block text-gray-600 duration-300 hover:underline"
+                      >
+                        {t(workplace)}
+                      </a>
                       <span className="block text-gray-600">{position}</span>
                     </div>
                   </div>
