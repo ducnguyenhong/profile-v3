@@ -2,7 +2,7 @@ export const VI = {
   STARFISH: {
     TITLE: 'Luôn có các nội dung mới được cập nhật tại đây',
     LANGUAGE: 'Ngôn ngữ',
-    TECH_USED: 'Tech used',
+    TECH_USED: 'Công nghệ',
     MY_CV: 'CV của tôi',
     OTHER_LINK: 'Các liên kết khác',
     COPYRIGHT: 'Bản quyền',
