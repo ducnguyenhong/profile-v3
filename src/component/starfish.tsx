@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { Fragment, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled, { keyframes } from 'styled-components';
@@ -16,9 +17,11 @@ const StarfishStyle = styled.div`
 const Starfish: React.FC = () => {
   const [showMore, setShowMore] = useState<boolean>(false);
   const { t } = useTranslation();
+  const language = localStorage.getItem('language') || 'en';
 
   const onChangeLang = useCallback((lang: string) => {
     localStorage.setItem('language', lang);
+    window.location.reload();
   }, []);
 
   return (
@@ -53,7 +56,10 @@ const Starfish: React.FC = () => {
                     <button className="outline-none" onClick={() => onChangeLang('en')}>
                       <img
                         src={`${process.env.PUBLIC_URL}/assets/common/img-flag-en.png`}
-                        className="w-16 hover:opacity-100 duration-300"
+                        className={clsx({
+                          'w-16 hover:opacity-100 duration-300 transform hover:scale-110': true,
+                          'opacity-50': language === 'vi',
+                        })}
                         alt="en"
                         title="English"
                       />
@@ -62,7 +68,10 @@ const Starfish: React.FC = () => {
                     <button className="outline-none" onClick={() => onChangeLang('vi')}>
                       <img
                         src={`${process.env.PUBLIC_URL}/assets/common/img-flag-vn.png`}
-                        className="w-16 ml-16 opacity-50 hover:opacity-100 duration-300"
+                        className={clsx({
+                          'w-16 ml-16 hover:opacity-100 duration-300 transform hover:scale-110': true,
+                          'opacity-50': language === 'en',
+                        })}
                         alt="vn"
                         title="Tiếng Việt"
                       />
@@ -138,8 +147,8 @@ const Starfish: React.FC = () => {
 
                 <div className="flex justify-center mt-10">
                   <span className="font-semibold text-gray-600">
-                    Copyright © 2021 - Bản quyền thuộc về
-                    <a href="/" className="text-green-500 ml-1">
+                    Copyright © 2021 -
+                    <a href="/" className="text-green-500 ml-1 uppercase">
                       nhduc.net
                     </a>
                   </span>
