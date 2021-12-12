@@ -32,7 +32,7 @@ const MusicStyle = styled.div`
 
 const useAudio = (url: string) => {
   const [audio] = useState(new Audio(url));
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState<boolean>(false);
 
   const onToggle = () => setPlaying(!playing);
 
@@ -52,7 +52,7 @@ const useAudio = (url: string) => {
 
 const Music: React.FC = () => {
   const [showAnmMusicEnd, setShowAnmMusicEnd] = useState<boolean>(false);
-  const { playing, onToggle } = useAudio(`${process.env.PUBLIC_URL}/assets/audio/Lam-Gi-Phai-Hot.mp3`);
+  const { playing, onToggle } = useAudio(`${process.env.PUBLIC_URL}/assets/audio/Tiec-Tra-Sao.mp3`);
 
   useEffect(() => {
     const x = setTimeout(() => setShowAnmMusicEnd(true), 7000);

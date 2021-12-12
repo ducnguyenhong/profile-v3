@@ -40,16 +40,6 @@ const ARRAY_TECH_USED = [
     url: 'https://tailwindcss.com',
     title: 'Tailwind CSS',
   },
-  {
-    img: `${process.env.PUBLIC_URL}/assets/logo/img-logo-flaticon.png`,
-    url: 'https://flaticon.com',
-    title: 'Flaticon',
-  },
-  {
-    img: `${process.env.PUBLIC_URL}/assets/logo/img-logo-freepik.png`,
-    url: 'https://freepik.com',
-    title: 'Freepik',
-  },
 ];
 
 const Starfish: React.FC = () => {
@@ -201,12 +191,11 @@ const Starfish: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="col-span-2">
-                  <hr />
-                </div>
-
-                <div className="flex justify-center col-span-2">
-                  <span className="font-semibold text-gray-600">
+                <div className="flex flex-col items-center justify-center col-span-2">
+                  <div className="w-1/2 mx-auto">
+                    <hr />
+                  </div>
+                  <span className="font-semibold text-gray-600 mt-4">
                     {t('STARFISH.COPYRIGHT')} © 2021 -
                     <a href="/" className="text-green-500 ml-1 uppercase">
                       nhduc.net
