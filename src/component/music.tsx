@@ -1,41 +1,32 @@
+import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const animationMusic = keyframes`
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-    -ms-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
+const anmMusicStart = keyframes`
+  from{transform: rotate(-45deg) translateX(-50px); opacity: 0.7;}
+  to{transform: rotate(0deg) translateX(0); opacity: 1;}
+`;
 
-  10%, 20% {
-    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-    -ms-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-  }
+const anmMusicEnd = keyframes`
+  0% {transform: scale3d(1, 1, 1);}
 
-  30%, 50%, 70%, 90% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-    -ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-  }
+  10%, 20% {transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);}
 
-  40%, 60%, 80% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-    -ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-  }
+  30%, 50%, 70%, 90% {transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);}
 
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    -ms-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
+  40%, 60%, 80% {transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);}
+
+  100% {transform: scale3d(1, 1, 1);}
 `;
 
 const MusicStyle = styled.div`
-  .music-icon {
-    animation: ${animationMusic} 5s ease-in-out infinite alternate;
+  .anm-start {
+    animation: ${anmMusicStart} 1.5s ease-in-out forwards;
+    animation-delay: 5s;
+  }
+
+  .anm-end {
+    animation: ${anmMusicEnd} 5s ease-in-out infinite alternate;
   }
 `;
 
@@ -59,15 +50,26 @@ const useAudio = (url: string) => {
   return { playing, onToggle };
 };
 
-const Music = () => {
+const Music: React.FC = () => {
+  const [showAnmMusicEnd, setShowAnmMusicEnd] = useState<boolean>(false);
   const { playing, onToggle } = useAudio(`${process.env.PUBLIC_URL}/assets/audio/Lam-Gi-Phai-Hot.mp3`);
+
+  useEffect(() => {
+    const x = setTimeout(() => setShowAnmMusicEnd(true), 7000);
+
+    return () => clearTimeout(x);
+  }, []);
 
   return (
     <MusicStyle className="fixed bottom-7 left-7 lg:bottom-10 lg:left-10">
       <button onClick={onToggle} className="outline-none" title="Music">
         <img
           src={`${process.env.PUBLIC_URL}/assets/home/music-${playing ? 'play' : 'pause'}.png`}
-          className="w-8 lg:w-12 music-icon"
+          className={clsx({
+            'w-8 lg:w-12 music-icon': true,
+            'anm-start opacity-0': !showAnmMusicEnd,
+            'anm-end': showAnmMusicEnd,
+          })}
           alt="music"
         />
       </button>

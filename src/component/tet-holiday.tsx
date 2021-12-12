@@ -1,15 +1,25 @@
+import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled, { keyframes } from 'styled-components';
 
-const animationNumber = keyframes`
+const anmNumberStart = keyframes`
+  from{transform: translateY(-50px); opacity: 0.7;}
+  to{transform: translateY(0); opacity: 1;}
+`;
+
+const anmNumberEnd = keyframes`
   from{transform: translateY(0)}
   to{transform: translateY(-5px)}
 `;
 
 const Style = styled.div`
+  .anm-start {
+    animation: ${anmNumberStart} 1s forwards;
+    animation-delay: 6s;
+  }
   .number-icon {
-    animation: ${animationNumber} 1.2s ease-in-out 3s infinite alternate;
+    animation: ${anmNumberEnd} 1.2s ease-in-out 3s infinite alternate;
   }
   .number-icon-1 {
     animation-delay: 0.4s;
@@ -32,6 +42,13 @@ const TetHoliday: React.FC = () => {
   const [seconds, setSeconds] = useState<number>(0);
   const countDownDate = new Date('Feb 1, 2022 00:00:00').getTime();
   const { t } = useTranslation();
+  const [showAnmEnd, setShowAnmEnd] = useState<boolean>(false);
+
+  useEffect(() => {
+    const x = setTimeout(() => setShowAnmEnd(true), 7000);
+
+    return () => clearTimeout(x);
+  }, []);
 
   useEffect(() => {
     const countDown = setInterval(function () {
@@ -52,7 +69,10 @@ const TetHoliday: React.FC = () => {
         href="https://autoclickvn.github.io/count-down-tet-holiday"
         target="_blank"
         rel="noopener noreferrer"
-        className="block"
+        className={clsx({
+          block: true,
+          'anm-start opacity-0': !showAnmEnd,
+        })}
         title="Tết Nhâm Dần 2022"
       >
         <div className="grid grid-cols-4">
