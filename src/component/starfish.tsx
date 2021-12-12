@@ -1,16 +1,26 @@
 import clsx from 'clsx';
-import { Fragment, useCallback, useState } from 'react';
+import { Fragment, useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled, { keyframes } from 'styled-components';
 
-const animationStar = keyframes`
+const anmStarStart = keyframes`
+  from{transform: rotate(45deg) translateX(50px); opacity: 0.7;}
+  to{transform: rotate(-45deg) translateX(0); opacity: 1;}
+`;
+
+const anmStarEnd = keyframes`
   from{transform: rotate(-45deg)}
   to{transform: rotate(45deg)}
 `;
 
 const StarfishStyle = styled.div`
-  img {
-    animation: ${animationStar} 5s ease-in-out infinite alternate;
+  .anm-start {
+    animation: ${anmStarStart} 1.5s ease-in-out forwards;
+    animation-delay: 5s;
+  }
+
+  .anm-end {
+    animation: ${anmStarEnd} 5s ease-in-out infinite alternate;
   }
 `;
 
@@ -44,6 +54,7 @@ const ARRAY_TECH_USED = [
 
 const Starfish: React.FC = () => {
   const [showMore, setShowMore] = useState<boolean>(false);
+  const [showAnmStarEnd, setShowAnmStarEnd] = useState<boolean>(false);
   const { t } = useTranslation();
   const language = localStorage.getItem('language') || 'en';
 
@@ -52,13 +63,23 @@ const Starfish: React.FC = () => {
     window.location.reload();
   }, []);
 
+  useEffect(() => {
+    const x = setTimeout(() => setShowAnmStarEnd(true), 7000);
+
+    return () => clearTimeout(x);
+  }, []);
+
   return (
     <Fragment>
       <StarfishStyle className="fixed bottom-7 right-7 lg:bottom-10 lg:right-10">
         <button className="outline-none" onClick={() => setShowMore(true)}>
           <img
             src={`${process.env.PUBLIC_URL}/assets/more/img-starfish.png`}
-            className="w-10 lg:w-16 cursor-pointer"
+            className={clsx({
+              'w-10 lg:w-16': true,
+              'anm-start opacity-0': !showAnmStarEnd,
+              'anm-end': showAnmStarEnd,
+            })}
             alt="starfish"
           />
         </button>

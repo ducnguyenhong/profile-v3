@@ -1,6 +1,8 @@
+import clsx from 'clsx';
 import LoadableUI from 'layout/loadable-ui';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Loadable from 'react-loadable';
+import { ARRAY_PINMAP } from './home.data';
 import { HomeStyle } from './home.style';
 
 const Project = Loadable({
@@ -30,6 +32,13 @@ const Contact = Loadable({
 
 const Home: React.FC = () => {
   const [showContent, setShowContent] = useState<number>(0);
+  const [showAnmPinmapEnd, setShowAnmPinmapEnd] = useState<boolean>(false);
+
+  useEffect(() => {
+    const x = setTimeout(() => setShowAnmPinmapEnd(true), 5000);
+
+    return () => clearTimeout(x);
+  }, []);
 
   return (
     <HomeStyle className="flex items-center justify-center h-full relative">
@@ -40,57 +49,25 @@ const Home: React.FC = () => {
         />
       )}
 
-      <img src={`${process.env.PUBLIC_URL}/assets/home/img-island.webp`} alt="island" />
+      <img src={`${process.env.PUBLIC_URL}/assets/home/img-island.webp`} className="island" alt="island" />
 
-      <div className="absolute pin-map-info">
-        <button onClick={() => setShowContent(4)} className="outline-none">
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/home/pin-map-info.webp`}
-            className="pin-map w-16 lg:w-24"
-            alt="sea shells"
-          />
-        </button>
-      </div>
-
-      <div className="absolute pin-map-skill">
-        <button onClick={() => setShowContent(3)} className="outline-none">
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/home/pin-map-skill.webp`}
-            className="pin-map w-16 lg:w-24 cursor-pointer"
-            alt="umbrella"
-          />
-        </button>
-      </div>
-
-      <div className="absolute pin-map-project">
-        <button onClick={() => setShowContent(5)} className="outline-none">
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/home/pin-map-project.webp`}
-            className="pin-map w-16 lg:w-24 cursor-pointer"
-            alt="umbrella"
-          />
-        </button>
-      </div>
-
-      <div className="absolute pin-map-exp">
-        <button onClick={() => setShowContent(1)} className="outline-none">
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/home/pin-map-exp.webp`}
-            className="pin-map w-16 lg:w-24 cursor-pointer"
-            alt="umbrella"
-          />
-        </button>
-      </div>
-
-      <div className="absolute pin-map-contact">
-        <button onClick={() => setShowContent(2)} className="outline-none">
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/home/pin-map-contact.webp`}
-            className="pin-map w-16 lg:w-24 cursor-pointer"
-            alt="umbrella"
-          />
-        </button>
-      </div>
+      {ARRAY_PINMAP.map((item) => {
+        return (
+          <div className={`absolute ${item.divClassName}`}>
+            <button onClick={() => setShowContent(item.numberContent)} className="outline-none">
+              <img
+                src={item.img}
+                className={clsx({
+                  'w-16 lg:w-24': true,
+                  'pin-map-end': showAnmPinmapEnd,
+                  'pin-map-start': !showAnmPinmapEnd,
+                })}
+                alt={item.title}
+              />
+            </button>
+          </div>
+        );
+      })}
 
       <Experience isShow={showContent === 1} />
       <Contact isShow={showContent === 2} />

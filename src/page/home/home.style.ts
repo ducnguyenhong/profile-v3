@@ -1,13 +1,52 @@
 import styled, { keyframes } from 'styled-components';
 
-const animationPinmap = keyframes`
+const anmPinmapEnd = keyframes`
   from{transform: scale(1);}
   to{transform: scale(1.15);}
 `;
 
+const anmIsland = keyframes`
+  from{transform: scale(0.7); opacity: 0.5;}
+  to{transform: scale(1); opacity: 1;}
+`;
+
+const anmPinmapStart = keyframes`
+  from{transform: translateY(-70px); opacity: 0.7;}
+  to{transform: translateY(0); opacity: 1;}
+`;
+
 export const HomeStyle = styled.div`
-  .pin-map {
-    animation: ${animationPinmap} 2s ease-in-out infinite alternate;
+  .pin-map-start {
+    animation: ${anmPinmapStart} 1s forwards;
+    opacity: 0;
+  }
+
+  .pin-map-end {
+    animation: ${anmPinmapEnd} 2s ease-in-out infinite alternate;
+  }
+
+  .pin-map-skill img {
+    animation-delay: 2s;
+  }
+
+  .pin-map-exp img {
+    animation-delay: 2.5s;
+  }
+
+  .pin-map-info img {
+    animation-delay: 3s;
+  }
+
+  .pin-map-contact img {
+    animation-delay: 3.5s;
+  }
+
+  .pin-map-project img {
+    animation-delay: 4s;
+  }
+
+  .island {
+    animation: ${anmIsland} 2s ease-in-out forwards;
   }
 
   //MOBILE HORIZONTAL
