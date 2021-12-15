@@ -53,10 +53,14 @@ const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
           </div>
 
           {showProject !== 0 && (
-            <div className="fixed top-0 lg:top-20 left-0 bottom-0 lg:bottom-auto right-0 m-auto lg:left-auto lg:right-20 z-50 px-20 py-10">
+            <div className="fixed top-0 lg:top-20 left-0 bottom-0 lg:bottom-auto right-0 m-auto lg:left-auto lg:right-20 z-50 px-20 py-5 lg:py-10">
               <div className="bg-gradient-to-r from-yellow-300 to-green-400 p-4 h-full rounded-xl flex items-center justify-center relative">
                 <button className="absolute -top-4 -right-4 outline-none" onClick={() => setShowProject(0)}>
-                  <img src={`${process.env.PUBLIC_URL}/assets/img-close-modal.png`} className="w-12" alt="close" />
+                  <img
+                    src={`${process.env.PUBLIC_URL}/assets/common/img-close-modal.png`}
+                    className="w-12"
+                    alt="close"
+                  />
                 </button>
                 <div className="bg-white py-10 px-20 rounded-md h-full overflow-y-auto" style={{ width: 700 }}>
                   <div className="flex justify-center items-center flex-col">

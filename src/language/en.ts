@@ -1,6 +1,6 @@
 export const EN = {
   STARFISH: {
-    TITLE: 'Always have new content updated here',
+    TITLE: 'New content is always updated here',
     LANGUAGE: 'Language',
     TECH_USED: 'Tech used',
     MY_CV: 'My CV',

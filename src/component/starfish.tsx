@@ -79,7 +79,7 @@ const Starfish: React.FC = () => {
         <div className="w-2/3 lg:w-1/2 fixed top-10 lg:top-20 left-0 right-0 mx-auto z-20 rounded-md">
           <div className="bg-gradient-to-r from-yellow-300 to-green-400 p-4 rounded-xl flex items-center justify-center relative">
             <button className="absolute -top-4 -right-4 outline-none" onClick={() => setShowMore(false)}>
-              <img src={`${process.env.PUBLIC_URL}/assets/img-close-modal.png`} className="w-12" alt="close" />
+              <img src={`${process.env.PUBLIC_URL}/assets/common/img-close-modal.png`} className="w-12" alt="close" />
             </button>
             <div className="h-80 lg:h-auto overflow-y-auto bg-white py-10 px-10 lg:px-20 w-full rounded-md">
               <div className="w-full grid-cols-2 grid gap-x-10 gap-y-14">
