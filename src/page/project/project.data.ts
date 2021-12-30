@@ -28,12 +28,12 @@ export const ARRAY_PROJECTS = [
   },
   {
     img: '/assets/project/img-project-4.png',
-    title: 'Galaxy Utility',
+    title: 'Galaxy Ultra UI',
     description: 'PROJECT.DES_4',
-    tech: 'typescript npm',
-    github: 'https://github.com/autoclickvn/galaxy-utility',
-    imgDemo: '/assets/project/img-demo-galaxy-utility.webp',
-    linkDemo: 'https://www.npmjs.com/package/galaxy-utility',
+    tech: 'next tailwind typescript',
+    github: '',
+    imgDemo: '/assets/project/img-demo-galaxy-ultra.webp',
+    linkDemo: 'https://galaxyultra.net',
   },
   {
     img: '/assets/project/img-project-1.png',
