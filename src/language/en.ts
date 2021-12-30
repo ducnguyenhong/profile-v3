@@ -28,7 +28,7 @@ export const EN = {
     DES_1: 'Free online curriculum vitae',
     DES_2: 'Free online curriculum vitae on mobile app',
     DES_3: 'A basic CMS framework',
-    DES_4: 'A repository of utility functions',
+    DES_4: 'A UI library using TailwindCSS',
     DES_5: 'See Vietnam weather with weather web app',
     DES_6: 'Game Tien Len Mien Bac',
   },

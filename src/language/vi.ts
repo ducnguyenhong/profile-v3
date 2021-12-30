@@ -28,7 +28,7 @@ export const VI = {
     DES_1: 'CV trực tuyến miễn phí',
     DES_2: 'CV trực tuyến miễn phí trên di động',
     DES_3: 'Một khung CMS cơ bản',
-    DES_4: 'Một kho lưu trữ các chức năng tiện ích',
+    DES_4: 'Một thư viện UI bằng TailwindCSS',
     DES_5: 'Xem thời tiết Việt Nam với ứng dụng web',
     DES_6: 'Game Tiến Lên Miền Bắc',
   },

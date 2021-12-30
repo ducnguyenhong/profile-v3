@@ -30,7 +30,7 @@ export const ARRAY_PROJECTS = [
     img: '/assets/project/img-project-4.png',
     title: 'Galaxy Ultra UI',
     description: 'PROJECT.DES_4',
-    tech: 'next tailwind typescript',
+    tech: 'nextjs tailwind typescript',
     github: '',
     imgDemo: '/assets/project/img-demo-galaxy-ultra.webp',
     linkDemo: 'https://galaxyultra.net',
