@@ -21,6 +21,7 @@ export const EN = {
     HIGH: 'Thanh Thuy high school',
     UNIVERSITY: 'University of Transport and Communications',
     WP_1: 'Omnischool (EkidEnglish)',
+    WP_2: 'VNDIRECT',
   },
 
   PROJECT: {
@@ -31,6 +32,7 @@ export const EN = {
     DES_4: 'A UI library using TailwindCSS',
     DES_5: 'See Vietnam weather with weather web app',
     DES_6: 'Game Tien Len Mien Bac',
+    SEE_MORE: 'See more',
   },
 
   TET: {

@@ -57,16 +57,16 @@ export const ARRAY_BACKEND = [
     url: 'https://www.mongodb.com',
     logo: '/assets/logo/img-logo-mongodb.png',
   },
-  {
-    name: 'MySQL',
-    url: 'https://www.mysql.com',
-    logo: '/assets/logo/img-logo-mysql.png',
-  },
-  {
-    name: 'SQL Server',
-    url: 'https://www.microsoft.com/en-us/sql-server',
-    logo: '/assets/logo/img-logo-sqlserver.png',
-  },
+  // {
+  //   name: 'MySQL',
+  //   url: 'https://www.mysql.com',
+  //   logo: '/assets/logo/img-logo-mysql.png',
+  // },
+  // {
+  //   name: 'SQL Server',
+  //   url: 'https://www.microsoft.com/en-us/sql-server',
+  //   logo: '/assets/logo/img-logo-sqlserver.png',
+  // },
 ];
 
 export const ARRAY_OTHER = [
@@ -85,11 +85,11 @@ export const ARRAY_OTHER = [
     url: 'https://www.docker.com',
     logo: '/assets/logo/img-logo-docker.png',
   },
-  {
-    name: 'Firebase',
-    url: 'https://firebase.google.com',
-    logo: '/assets/logo/img-logo-firebase.png',
-  },
+  // {
+  //   name: 'Firebase',
+  //   url: 'https://firebase.google.com',
+  //   logo: '/assets/logo/img-logo-firebase.png',
+  // },
   {
     name: 'Photoshop',
     url: 'https://www.adobe.com/products/photoshop.html',
@@ -107,6 +107,11 @@ export const ARRAY_UI = [
     name: 'Bootstrap',
     url: 'https://getbootstrap.com',
     logo: '/assets/logo/img-logo-bootstrap.png',
+  },
+  {
+    name: 'Chakra UI',
+    url: 'https://chakra-ui.com/',
+    logo: '/assets/logo/img-logo-chakra.png',
   },
   {
     name: 'Material UI',

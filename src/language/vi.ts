@@ -21,6 +21,7 @@ export const VI = {
     HIGH: 'Trường THPT Thanh Thuỷ',
     UNIVERSITY: 'ĐH Giao Thông Vận Tải',
     WP_1: 'Omnischool (EkidEnglish)',
+    WP_2: 'VNDIRECT',
   },
 
   PROJECT: {
@@ -31,6 +32,7 @@ export const VI = {
     DES_4: 'Một thư viện UI bằng TailwindCSS',
     DES_5: 'Xem thời tiết Việt Nam với ứng dụng web',
     DES_6: 'Game Tiến Lên Miền Bắc',
+    SEE_MORE: 'Xem thêm',
   },
 
   TET: {

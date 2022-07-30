@@ -1,11 +1,11 @@
 export const ARRAY_EXP = [
-  {
-    time: '2005 - 2010',
-    workplace: 'EXP.PRIMARY',
-    position: '',
-    icon: '/assets/experience/img-ic-timeline-1.png',
-    url: 'http://thbaoyen.phutho.edu.vn',
-  },
+  // {
+  //   time: '2005 - 2010',
+  //   workplace: 'EXP.PRIMARY',
+  //   position: '',
+  //   icon: '/assets/experience/img-ic-timeline-1.png',
+  //   url: 'http://thbaoyen.phutho.edu.vn',
+  // },
   {
     time: '2010 - 2014',
     workplace: 'EXP.SECONDARY',
@@ -33,5 +33,12 @@ export const ARRAY_EXP = [
     position: 'Frontend Developer',
     icon: '/assets/experience/img-ic-timeline-5.png',
     url: 'https://ekidenglish.edu.vn',
+  },
+  {
+    time: '01/2022 - now',
+    workplace: 'EXP.WP_2',
+    position: 'Frontend Developer',
+    icon: '/assets/experience/img-ic-timeline-1.png',
+    url: 'https://www.vndirect.com.vn',
   },
 ];

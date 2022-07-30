@@ -50,6 +50,16 @@ const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                 );
               })}
             </div>
+            <div className="flex justify-center mt-4">
+              <a
+                href="https://github.com/autoclickvn?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline font-semibold text-blue-500 cursor-pointer hover:text-blue-600 duration-300"
+              >
+                {t('PROJECT.SEE_MORE')}
+              </a>
+            </div>
           </div>
 
           {showProject !== 0 && (

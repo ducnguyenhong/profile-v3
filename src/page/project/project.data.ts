@@ -6,7 +6,7 @@ export const ARRAY_PROJECTS = [
     tech: 'react typescript tailwind recoil node express mongodb',
     github: 'https://github.com/autoclickvn/cvfree',
     imgDemo: '/assets/project/img-demo-cvfree.webp',
-    linkDemo: 'http://cvfree.top',
+    linkDemo: 'http://cvfree.epizy.com',
   },
   {
     img: '/assets/project/img-project-3.png',
@@ -31,7 +31,7 @@ export const ARRAY_PROJECTS = [
     title: 'Galaxy Ultra UI',
     description: 'PROJECT.DES_4',
     tech: 'nextjs tailwind typescript',
-    github: '',
+    github: 'https://github.com/galaxy-ultra/ui',
     imgDemo: '/assets/project/img-demo-galaxy-ultra.webp',
     linkDemo: 'https://galaxyultra.net',
   },
