@@ -143,5 +143,28 @@ export const HomeStyle = styled.div`
       top: 3%;
       left: 38%;
     }
+
+    // Larger than 2XL
+  @media (min-width: 1920px) {
+    .pin-map-info {
+      top: 45%;
+      left: 50%;
+    }
+    .pin-map-project {
+      top: 43%;
+      right: 24%;
+    }
+    .pin-map-contact {
+      top: 17%;
+      right: 31%;
+    }
+    .pin-map-skill {
+      top: 53%;
+      left: 29%;
+    }
+    .pin-map-exp {
+      top: 19%;
+      left: 38%;
+    }
   }
 `;
