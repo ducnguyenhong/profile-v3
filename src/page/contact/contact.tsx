@@ -30,7 +30,7 @@ const Contact: React.FC<{ isShow: boolean }> = ({ isShow }) => {
       })}
     >
       {isShow && (
-        <div className="content pt-20 pb-96 lg:pb-0 relative h-auto bg-no-repeat bg-cover flex items-start justify-center">
+        <div className="content pt-20 2xl:pt-48 pb-96 lg:pb-0 relative h-auto bg-no-repeat bg-cover flex items-start justify-center">
           <div className="grid grid-cols-2 gap-x-16 gap-y-10 px-10">
             <a
               href="tel:0389755202"

@@ -19,7 +19,7 @@ const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
     >
       {isShow && (
         <div className="content h-auto pb-10 lg:pb-0 overflow-y-auto bg-no-repeat bg-cover">
-          <div className="pb-5 px-20 mt-60">
+          <div className="pb-5 px-20 mt-60 2xl:mt-96">
             <div className="grid grid-cols-2 gap-x-20 gap-y-7">
               {ARRAY_PROJECTS.map((item, index) => {
                 return (
@@ -50,7 +50,7 @@ const Project: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                 );
               })}
             </div>
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-center mt-4 2xl:mt-20">
               <a
                 href="https://github.com/autoclickvn?tab=repositories"
                 target="_blank"

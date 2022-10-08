@@ -38,7 +38,7 @@ const Information: React.FC<{ isShow: boolean }> = ({ isShow }) => {
             <span className="block font-medium text-gray-400 whitespace-nowrap">Frontend Developer</span>
           </div>
 
-          <div className="text-center mt-12 font-semibold flex justify-center">
+          <div className="text-center mt-12 font-semibold flex justify-center 2xl:mt-28">
             <div className="bg-gray-50 px-4 py-2 rounded-md">
               <span className="text-gray-600 text-lg font-medium whitespace-nowrap">
                 "{t('INFO.HELLO_START')}{' '}
@@ -47,7 +47,7 @@ const Information: React.FC<{ isShow: boolean }> = ({ isShow }) => {
             </div>
           </div>
 
-          <div className="md:mx-20 mt-16 grid grid-cols-2 gap-x-10 gap-y-10">
+          <div className="md:mx-20 mt-16 grid grid-cols-2 gap-x-10 gap-y-10 2xl:mt-28">
             <div className="flex items-center justify-center flex-col col-span-1">
               <div className="w-16 h-16 rounded-full bg-gradient-to-r from-pink-100 to-pink-400 flex items-center justify-center">
                 <FontAwesomeIcon icon={faBirthdayCake} className="text-gray-50 text-xl" />

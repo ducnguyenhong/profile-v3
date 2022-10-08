@@ -17,12 +17,12 @@ const Experience: React.FC<{ isShow: boolean }> = ({ isShow }) => {
     >
       {isShow && (
         <div className="content pb-10 lg:pb-0 h-auto bg-no-repeat bg-cover">
-          <div className="z-50 pt-40 left-0 w-full h-full">
+          <div className="z-50 pt-40 left-0 w-full h-full 2xl:pt-80">
             <div className="px-10 mt-10 relative">
               {ARRAY_EXP.map((item, index) => {
                 const { workplace, time, position, icon, url } = item;
                 return (
-                  <div key={`exp_${time}`} className="grid grid-cols-5">
+                  <div key={`exp_${time}`} className="grid grid-cols-5 2xl:grid-cols-4">
                     <div
                       className={clsx({
                         'col-span-2 relative z-40': true,
@@ -30,11 +30,11 @@ const Experience: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                       })}
                     >
                       <span className="block font-semibold text-gray-600 text-lg text-right pr-10">{time}</span>
-                      <div className="absolute -top-2 -right-8">
+                      <div className="absolute -top-2 -right-8 2xl:-right-10">
                         <img src={`${process.env.PUBLIC_URL}${icon}`} alt="ic" className="w-10" />
                       </div>
                     </div>
-                    <div className="col-span-3 lg:col-span-3 ml-16">
+                    <div className="col-span-3 ml-16 2xl:ml-20 2xl:col-span-2">
                       <a
                         href={url}
                         target="_blank"

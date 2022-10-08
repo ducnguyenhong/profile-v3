@@ -47,11 +47,11 @@ export const ARRAY_BACKEND = [
     url: 'https://expressjs.com',
     logo: '/assets/logo/img-logo-express.png',
   },
-  {
-    name: 'NestJS',
-    url: 'https://nestjs.com',
-    logo: '/assets/logo/img-logo-nestjs.png',
-  },
+  // {
+  //   name: 'NestJS',
+  //   url: 'https://nestjs.com',
+  //   logo: '/assets/logo/img-logo-nestjs.png',
+  // },
   {
     name: 'MongoDB',
     url: 'https://www.mongodb.com',

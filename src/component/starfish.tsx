@@ -142,7 +142,7 @@ const Starfish: React.FC = () => {
                   <label className="inline-block font-semibold text-gray-600 border-b">• {t('STARFISH.MY_CV')}</label>
                   <div className="mt-5 flex justify-center">
                     <a
-                      href="http://cvfree.top/cv-public/nguyen-hong-duc.61767226ca0d8dfd8c726aba"
+                      href="https://www.topcv.vn/xem-cv/AVUFDlxZAw0IAVYBAQwDUVtQAQADVlFUV1YGVw9673"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mr-10 font-medium text-gray-500 duration-100 hover:text-blue-500 hover:underline"
@@ -150,7 +150,7 @@ const Starfish: React.FC = () => {
                       CV online
                     </a>
                     <a
-                      href={`${process.env.PUBLIC_URL}/assets/pdf/nguyen-hong-duc.pdf`}
+                      href={`${process.env.PUBLIC_URL}/assets/pdf/Nguyễn Hồng Đức.pdf`}
                       download
                       className="mr-10 font-medium text-gray-500 duration-100 hover:text-blue-500 hover:underline"
                     >
